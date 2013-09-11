@@ -2,7 +2,7 @@ name: beautify
 markdown: maruku
 pygments: false
 
-baseurl: /beautify-site/
+baseurl: /beautify-site
 
 debug: false
 
