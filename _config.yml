@@ -1,0 +1,19 @@
+name: beautify
+markdown: maruku
+pygments: false
+
+baseurl: /beautify-site
+
+debug: false
+
+exclude: [README.md]
+
+authors:
+    ceberhardt:
+        name: Colin Eberhardt
+        gravatar: 458f2e0d08d4114f8b323798cfea141d
+        author-summary: A coding addict, dividing my time between iOS, C#, JavaScript and everything else. <br/><a href="https://twitter.com/ColinEberhardt">@ColinEberhardt</a> <a href="https://plus.google.com/u/0/104181672098184856535" rel="author">Google+</a>.
+    godds:
+        name: Graham Odds
+        gravatar: 3f5e6c753071c6a41f7f1dbb89daeb3b
+        author-summary: Designer and developer working across desktop, web and mobile, with a particular taste for data visualisation.<br/><a href="https://twitter.com/g_odds">@g_odds</a><br/><a href="https://plus.google.com/u/0/106838695703708413394" rel="author">Google+</a>

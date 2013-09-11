@@ -1,0 +1,25 @@
+body {
+  position: relative;
+  padding-top: @navbar-height;
+}
+
+header {
+  .navbar-brand {
+    display: inline-block;
+    .text-to-image("images/logo.svg");
+    min-width: 200px;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: @navbar-height;
+
+    .no-svg & {
+      background-image: url("images/logo.png");
+    }
+  }
+
+  .beautify-navbar-collapse li {
+    text-transform: lowercase;
+    font-size: @font-size-large;
+  }
+}

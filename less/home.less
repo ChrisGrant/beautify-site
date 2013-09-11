@@ -1,0 +1,195 @@
+.hero, .feature {
+  width: 100%;
+  padding-top: 55px;
+  padding-bottom: 55px;
+
+  @media (max-width: @screen-tablet) {
+    padding-top: @font-size-base;
+    padding-bottom: @font-size-base;
+  }
+}
+.hero {
+  font-size: (@font-size-base * 1.125);
+  line-height: 1.7;
+  background-color: @off-white;
+  background-image: url("images/hero.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 600px;
+  padding-top: 125px;
+
+  .no-svg & {
+    background-image: url("images/hero.png");
+  }
+
+  .title {
+    color: @brand-blue;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: @screen-phone-max) and (max-width: @screen-desktop) {
+    background-position: -500px center;
+  }
+  @media (max-width: @screen-phone-max) {
+    background-image: none;
+    padding-top: @font-size-base * 0.5;
+    padding-bottom: @font-size-base;
+  }
+}
+
+.beauty-is-a-struggle {
+
+  img {
+    max-height: 270px;
+  }
+
+  .title {
+    color: @brand-orange;
+    margin-top: 12px;
+  }
+
+  ul.struggles {
+    margin-top: (2 * @font-size-base);
+    margin-left: 0;
+    margin-right: 0;
+
+    & > li {
+      font-size: (@font-size-base * 0.875);
+      padding: (@font-size-base * 0.5) 0 0 0;
+
+      &.blue {
+        border-top: 3px solid @brand-blue;
+      }
+      &.pink {
+        border-top: 3px solid @brand-pink;
+      }
+      &.green {
+        border-top: 3px solid @brand-green;
+      }
+    }
+
+    @media (max-width: @screen-desktop) {
+      margin-top: @font-size-base;
+
+      & > li {
+        padding: 0 0 0 5px;
+        margin: 5px 0 5px -8px;
+
+        &.blue {
+          border-top: none;
+          border-left: 3px solid @brand-blue;
+        }
+        &.pink {
+          border-top: none;
+          border-left: 3px solid @brand-pink;
+        }
+        &.green {
+          border-top: none;
+          border-left: 3px solid @brand-green;
+        }
+      }
+    }
+  }
+}
+
+.ios {
+  border-top: 2px solid @gray-light;
+  position: relative;
+
+  .title {
+    color: @brand-pink;
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  img.process {
+    border-top: 1px dashed @gray-light;
+    border-bottom: 1px dashed @gray-light;
+    width: 100%;
+    padding: 35px 5px;
+    margin: (@line-height-base * @font-size-base) 0;
+  }
+  ol.process {
+    list-style: none;
+    font-size: (@font-size-base * 0.875);
+
+    > li .number {
+      display: block;
+      padding-bottom: @font-size-base;
+      margin-bottom: (@font-size-small * 0.875 * @line-height-base);
+      height: (@font-size-base * 2);
+      box-sizing: content-box;
+
+      @media (max-width: @screen-phone-max) {
+        height: @font-size-base;
+        padding-bottom: (@font-size-base * 0.5);
+        margin-bottom: (@font-size-base * 0.5);
+        margin-top: @font-size-base;
+      }
+    }
+    > li:nth-child(1) .number {
+      border-bottom: 3px solid @brand-pink;
+    }
+    > li:nth-child(2) .number {
+      border-bottom: 3px solid @brand-purple;
+    }
+    > li:nth-child(3) .number {
+      border-bottom: 3px solid @brand-blue;
+    }
+    > li:nth-child(4) .number {
+      border-bottom: 3px solid @brand-green;
+    }
+  }
+
+  @media (max-width: @screen-phone-max) {
+    border: none;
+    padding-top: 55px;
+
+    img.process {
+      border: none;
+      padding: 0 5px;
+      margin: -55px 0 0 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      @media (min-width: @screen-phone) {
+        margin-top: -72px;
+      }
+    }
+  }
+}
+
+.what-next {
+  background-color: @off-white;
+
+  .title {
+    color: @brand-blue;
+    margin-top: 12px;
+  }
+
+  form#interest {
+    margin: (3 * @font-size-base) 0 0 0;
+
+    @media (max-width: @screen-phone-max) {
+      margin: 0;
+    }
+
+    input {
+      border: 2px solid @gray-light;
+      padding: 12px;
+
+      @media (max-width: @screen-desktop) {
+        border-bottom: none;
+      }
+    }
+    button {
+      background-color: @brand-blue;
+      color: @white;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+}
