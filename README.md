@@ -1,6 +1,6 @@
 # Beautify.io
 
-The [beautify.io](http://beautify.io) website, built using [Jekyll](http://jekyllrb.com/).
+The [beautify.io](http://beautify.io) website, built using [Jekyll](http://jekyllrb.com/). Currently the site is being served at [beautify.github.io/beautify-site](http://beautify.github.io/beautify-site/).
 
 ## Dependencies
 
