@@ -6,7 +6,7 @@ baseurl: /beautify-site
 
 debug: false
 
-exclude: [README.md]
+exclude: [README.md, bootstrap, build.sh, less, style.less, scripts]
 
 authors:
     ceberhardt:

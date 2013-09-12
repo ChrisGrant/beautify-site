@@ -2,7 +2,7 @@
 layout: post
 author: ceberhardt
 title: Beautify - a sneak preview
-summary: Colin E. and Graham O. gave a quick preview of beautify at the iOSDevUK and Reasons To Be Creative conferences in early September. We are happy to report that the concept was warmly received! 
+summary: Colin E. and Graham O. gave a quick preview of beautify at the iOSDevUK, Reasons To Be Creative and UX Cambridge conferences in early September. We are happy to report that the concept was warmly received!
 categories:
 ---
 
@@ -10,7 +10,7 @@ There has been a small team of us working away on the beautify concept for a few
 
 However, it is all too easy to become blinkered when working on something new. Who doesn't find their own 'baby' beautiful and wonderful?
 
-Last week we decided to share beautify with a few hundred developers. I gave a lightning talk at to an audience of iOS developers at [iOSDevUK](http://www.iosdevuk.com/), while Graham gave a similar lightning pitch to a mixed audience of developers and designers at [Reasons To Be Creative](http://reasons.to/).
+Last week we decided to share beautify with a few hundred developers. I gave a lightning talk at to an audience of iOS developers at [iOSDevUK](http://www.iosdevuk.com/), while Graham gave a similar lightning pitches to mixed audience of developers and designers at [Reasons To Be Creative](http://reasons.to/) and [UX Cambridge](http://uxcambridge.net/uxc2013/).
 
 <img src="{{ site.baseurl }}/assets/reasonsto.jpg" alt="Graham presenting beautify at ReasonsTo"/>
 
