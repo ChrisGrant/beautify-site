@@ -16,6 +16,10 @@ header {
     .no-svg & {
       background-image: url("images/logo.png");
     }
+
+    @media (max-width: @screen-xs-max) {
+      margin-left: @navbar-padding-horizontal;
+    }
   }
 
   .beautify-navbar-collapse li {

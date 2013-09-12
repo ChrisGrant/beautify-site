@@ -28,10 +28,10 @@
     margin-bottom: 24px;
   }
 
-  @media (min-width: @screen-phone-max) and (max-width: @screen-desktop) {
+  @media (min-width: @screen-xs-max) and (max-width: @screen-md) {
     background-position: -500px center;
   }
-  @media (max-width: @screen-phone-max) {
+  @media (max-width: @screen-xs-max) {
     background-image: none;
     padding-top: @font-size-base * 0.5;
     padding-bottom: @font-size-base;
@@ -69,7 +69,7 @@
       }
     }
 
-    @media (max-width: @screen-desktop) {
+    @media (max-width: @screen-lg) {
       margin-top: @font-size-base;
 
       & > li {
@@ -121,7 +121,7 @@
       height: (@font-size-base * 2);
       box-sizing: content-box;
 
-      @media (max-width: @screen-phone-max) {
+      @media (max-width: @screen-xs-max) {
         height: @font-size-base;
         padding-bottom: (@font-size-base * 0.5);
         margin-bottom: (@font-size-base * 0.5);
@@ -142,7 +142,7 @@
     }
   }
 
-  @media (max-width: @screen-phone-max) {
+  @media (max-width: @screen-xs-max) {
     border: none;
     padding-top: 55px;
 
@@ -173,7 +173,7 @@
   form#interest {
     margin: (3 * @font-size-base) 0 0 0;
 
-    @media (max-width: @screen-phone-max) {
+    @media (max-width: @screen-xs-max) {
       margin: 0;
     }
 
@@ -181,7 +181,7 @@
       border: 2px solid @gray-light;
       padding: 12px;
 
-      @media (max-width: @screen-desktop) {
+      @media (max-width: @screen-md) {
         border-bottom: none;
       }
     }

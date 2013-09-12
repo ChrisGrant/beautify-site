@@ -13,7 +13,8 @@ layout: page
       <h6 class="author-name"><span class="extra">by </span>{{ author.name }}</h6>
       <div class="author-summary">{{ author.author-summary }}</div>
       <div class="sub">
-        <span class="extra">published </span>{{ page.date | date: "%d %b %Y" }}
+        <div class="extra">published </div>
+        {{ page.date | date: "%d %b %Y" }}
       </div>
     </div>
   </aside>
