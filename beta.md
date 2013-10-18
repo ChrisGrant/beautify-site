@@ -19,18 +19,16 @@ From bland to beautiful.
 
 # Beautifying your app
 
-The following gives you brief introduction to beautify for iOS, and how to use it within your applications. 
-
 ## The beautify process
 
 The following is a brief description of the process before we get into the details.
 
-1. Download and add the framework to your app. The beautify framework will magically enhance the graphical capabilities of the existing UI controls, adding shadows, gradients and much more ...
-2. Add a couple of lines of code to your app that will cause it to connect to the design server.
-3. Login to the web-based designer
+1. Download and add the **beautify-ios** and **beautify-ios-streaming** (plus dependencies) frameworks to your app. The **beautify-ios** framework will magically enhance the graphical capabilities of the existing UIKit controls, while the **beautify-ios-streaming** framework connects your app to the web-based designer.
+2. Add a couple of lines of code to your app to connect to the design server.
+3. Sign up to use the web-based designer, which is located at [beautify.nodejitsu.com](http://beautify.nodejitsu.com/), using the details that will have been sent to you via email.
 4. Get creative live-styling your app!
 5. When you are done, grab the design as a JSON file and include it in your app.
-6. For the release build, add the more lightweight release version of our framework (excludes the streaming magic), and point it to the JSON file.
+6. For the release build, you just need the **beautify-ios** framework and your JSON file.
 7. Bask in the glory of your beautiful app and profit!
 
 That all sounds pretty simple doesn't it? If you need more detailed instructions read on ...   
@@ -39,19 +37,22 @@ That all sounds pretty simple doesn't it? If you need more detailed instructions
 
 ### Obtain the iOS framework
 
-The first step is to obtain a copy of the beautify framework. There are two separate version of the framework, one for development builds, which includes the code required to connect to the web-based beautify designer, and one for release builds which just contains the UI enhancement and style roll-out code.
+The first step is to obtain a copy of the beautify iOS code. There are two separate frameworks that you need in order to run a live design sessions. These are:
+
++ **beautify-ios** - this framework enhances the capabilities of the UIKit controls, adding shadows, gradients, borders and much more. It is open source and hosted on [GitHub](https://github.com/beautify/beautify-ios).
++ **beautify-ios-streaming** - this framework connects your app to a live design session.
 
 Both frameworks are included in the following download:
 
- + [Beautify.zip]({{ site.baseurl }}releases/Beautify.0.0.2.zip)
+ + **TODO:** add S3 download link 
 
 ### Add the required frameworks to your app
 
 In order to use beautify you need to add the framework to your project:
 
- + Drag **ThemeRoller.embeddedframework** into your project 
+ + Copy the **Beautify.framework** into the *Frameworks* group in your project 
 
-Beautify also depends on the following framework which you must also add to your application:  
+Beautify also depends on the following frameworks which you must also add to your application:  
 
  + **CFNetwork.framework** †
  + **Security.framework** †
@@ -62,47 +63,43 @@ Please note, the frameworks marked with a dagger (†) are not required for rele
 
 ### Enabled beautify within your project
 
-Within **AppDelegate.h** import the framework header:
+Within **AppDelegate.m** import the framework header:
 
-    #import <ThemeRoller/beautify.h>
+    #import <Beautify/Beautify.h>
 
 Then within the existing `application:didFinishLaunchingWithOptions:` method add the following:
 
-    [[SCBeautify instance] activate];
+    [[BYBeautify instance] activate];
 
-When the theme roller has been activated, every instance of an 'enhanced' control will have a renderer associated with it. You can use the renderer to alter the style of individual UI controls.
-
-    // access the renderer for my button
-    SCButtonRenderer* renderer = self.myButton.renderer;
-
-    // apply a big fat red border to the normal state
-    SCBorder* border = [[SCBorder alloc] initWithColor:[UIColor redColor] width:30.0f radius:15.0f];
-    [renderer setBorder:border forState:UIControlStateNormal];
-
-At this point you will find that the UIKit controls are now *much* more versatile. Have fun adding gradients to your buttons, shadows to your images and more ...
+With beautify activated, all the UIKit controls within your application are enhanced. You can gain access to the extra styling properties and methods via the `renderer` property that is added to each control. For full details of the programmatic beautify APIs, see the [beautify-ios GitHub pages](https://github.com/beautify/beautify-ios). 
 
 ## Starting a live design session
 
-### Creating an account
-
-If this is the first time you have used beautify, you need to sign in via the web based interface at [beautify.nodejitsu.com](http://beautify.nodejitsu.com/). Pick a suitable username and password and don't forget them (we haven't written the password reset logic yet!).
+A faster and more convenient way of styling your application is to connect to a live design session. When you were invited to the beautify beta you will have received details of how to sign up. Do this now!
 
 If you have already signed up visit [beautify.nodejitsu.com](beautify.nodejitsu.com) and login to your personal design session.
 
 ### Connecting your device
 
-In order to live-style your app you need to make a connection to the web-based beautify designer. To make a connection, initiate a design session after activating beautify as follows:
+In order to live-style your app you need to make a connection to the web-based beautify designer. To make a connection, first import the following header:
 
-	[[SCBeautify instance] activate];
-	[[SCBeuatifyStreamer instance] initiateDesignSessionWithUsername:@"yourUsername" andPassword:@"yourPassword"];
+    #import <BeautifyStreaming/BeautifyStreaming.h>
 
-The theme streamer creates a socket connection to the beautify designer. Any changes made via the web-based designer should be reflected immediately on your device. You can even connect multiple devices to a single session!
+Then update `application:didFinishLaunchingWithOptions:` as follows: 
 
-**NOTE:** your username / password are not sent to the server, instead they are combined to create a unique design session ID.
+    // enhance the UI controls
+    [[BYBeautify instance] activate];
+    
+    // connect to a streaming server
+    [[BYBeautifyStreamer instance] initiateDesignSessionWithUsername:@"YourUserNameHere"];
+
+Using your own username of course!
+
+The beautify streamer creates a socket connection to the web-based beautify designer. Any changes made via the web-based designer should be reflected immediately on your device. You can even connect multiple devices to a single session!
 
 ### Make it beautiful
 
-Once you have logged in to the designer and started your device with the theme streamer code above you should now be in a position to live-style your app. Go ahead ... have fun ... go crazy!
+Once you have logged in to the designer and started your device with the beautify streamer code above you should now be in a position to live-style your app. Go ahead ... have fun ... go crazy!
 
 ## Releasing your app
 
@@ -112,12 +109,12 @@ From the web-based designer hit the export button, then copy / paste the JSON in
 
 For the release build there are just two framework dependencies:
 
- + **ThemeRoller.embeddedframework** 
+ + **Beautify.framework** 
  + **QuartzCore.framework**
 
 Within the `application:didFinishLaunchingWithOptions:` method you just need to activate and load your designs as follows:
 
-    [[SCBeautify instance] activateWithStyle:@"BeautifyRocks"];
+    [[BYBeautify instance] activateWithStyle:@"BeautifyRocks"];
 
 And that's it!
 
@@ -130,8 +127,6 @@ Thoughts, bugs, ideas, money and other offers - give us a shout  -enquiries@beau
 The following is a few notes regarding the current Beautify for iOS framework that might help you in your development:
 
  + We currently beautify the following controls: `UITextField`, `UIButton`, `UILabel`, `UINavigationBar`, `UITableViewCell`, `UISwitch`, `UIViewController`, `UIImageView` and `UIBarButtonItem` - there will be more to follow ...
- + We only beautify custom buttons.
- + We only beautify rounded text fields.
  + We have added a highlighted state to `UITextField` which is indicates when a text field is being edited. We think this is pretty cool!
  
 
