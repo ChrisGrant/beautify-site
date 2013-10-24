@@ -3835,6 +3835,13 @@ footer .tagline {
     border-left: 3px solid #c7d658;
   }
 }
+img.process {
+  border-top: 1px dashed #dcdfe6;
+  border-bottom: 1px dashed #dcdfe6;
+  width: 100%;
+  padding: 35px 5px;
+  margin: 25.6px 0;
+}
 .ios {
   border-top: 2px solid #dcdfe6;
   position: relative;
@@ -3843,13 +3850,6 @@ footer .tagline {
   color: #ea3c86;
   margin-top: 0;
   margin-bottom: 24px;
-}
-.ios img.process {
-  border-top: 1px dashed #dcdfe6;
-  border-bottom: 1px dashed #dcdfe6;
-  width: 100%;
-  padding: 35px 5px;
-  margin: 25.6px 0;
 }
 .ios ol.process {
   list-style: none;

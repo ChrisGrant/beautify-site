@@ -9,13 +9,15 @@ So glad you could join us ...
 
 If you have reached this page, you are lucky enough to have been granted access to the beta version of beautify for iOS. We have been hard at work creating what we think is a pretty awesome tool for creating beautiful apps. But before we add too many whistles and bells we'd like to share it with you and see what you think.
 
-This page contains some (brief) instructions that will get you up and running with beautify. If you get stuck or find and bugs, please give us a shout. - enquiries@beautify.io
+This page contains some (brief) instructions that will get you up and running with beautify. If you get stuck or find and bugs, please give us a shout. - <a href="mailto:enquiries@beautify.io">enquiries@beautify.io</a>
 
 Finally, I'd like to ask you a favor. What we need more than anything else is your thoughts, ideas and feelings. We'd love it if you could help us make beautify even better.
 
 From bland to beautiful.
 
--- Colin E.,[@ColinEberhardt](https://twitter.com/ColinEberhardt), and the Beautify Team, [@Beautifyio](https://twitter.com/Beautifyio).
+-- Colin E. [@ColinEberhardt](https://twitter.com/ColinEberhardt), and the beautify team, [@Beautifyio](https://twitter.com/Beautifyio).
+
+<img class="process" src="images/introducing.png"/>
 
 # Beautifying your app
 
@@ -25,7 +27,7 @@ The following is a brief description of the process before we get into the detai
 
 1. Download and add the **beautify-ios** and **beautify-ios-streaming** (plus dependencies) frameworks to your app. The **beautify-ios** framework will magically enhance the graphical capabilities of the existing UIKit controls, while the **beautify-ios-streaming** framework connects your app to the web-based designer.
 2. Add a couple of lines of code to your app to connect to the design server.
-3. Sign up to use the web-based designer, which is located at [beautify.nodejitsu.com](http://beautify.nodejitsu.com/), using the details that will have been sent to you via email.
+3. Sign up to use the web-based designer, which is located at [designer.beautify.io](http://designer.beautify.io/), using the details that will have been sent to you via email.
 4. Get creative live-styling your app!
 5. When you are done, grab the design as a JSON file and include it in your app.
 6. For the release build, you just need the **beautify-ios** framework and your JSON file.
@@ -61,7 +63,7 @@ Beautify also depends on the following frameworks which you must also add to you
 
 Please note, the frameworks marked with a dagger (†) are not required for release builds of your app.
 
-### Enabled beautify within your project
+### Enabling beautify within your project
 
 Within **AppDelegate.m** import the framework header:
 
@@ -77,7 +79,7 @@ With beautify activated, all the UIKit controls within your application are enha
 
 A faster and more convenient way of styling your application is to connect to a live design session. When you were invited to the beautify beta you will have received details of how to sign up. Do this now!
 
-If you have already signed up visit [beautify.nodejitsu.com](beautify.nodejitsu.com) and login to your personal design session.
+If you have already signed up visit [designer.beautify.io](http://designer.beautify.io/) and login to your personal design session.
 
 ### Connecting your device
 
@@ -101,6 +103,8 @@ The beautify streamer creates a socket connection to the web-based beautify desi
 
 Once you have logged in to the designer and started your device with the beautify streamer code above you should now be in a position to live-style your app. Go ahead ... have fun ... go crazy!
 
+<img src="images/beautified-app.png"/>
+
 ## Releasing your app
 
 Have you finished playing with the designer? ... yes? ... good. It's now time to create a release build of your application.
@@ -120,11 +124,11 @@ And that's it!
 
 Wow - that really was simple wasn't it? 
 
-Thoughts, bugs, ideas, money and other offers - give us a shout  -enquiries@beautify.io
+Thoughts, bugs, ideas, money and other offers - give us a shout -  <a href="mailto:enquiries@beautify.io">enquiries@beautify.io</a>
 
 # Release Notes
 
-The following is a few notes regarding the current Beautify for iOS framework that might help you in your development:
+The following is a few notes regarding the current beautify for iOS framework that might help you in your development:
 
  + We currently beautify the following controls: `UITextField`, `UIButton`, `UILabel`, `UINavigationBar`, `UITableViewCell`, `UISwitch`, `UIViewController`, `UIImageView` and `UIBarButtonItem` - there will be more to follow ...
  + We have added a highlighted state to `UITextField` which is indicates when a text field is being edited. We think this is pretty cool!
