@@ -138,7 +138,7 @@ Thoughts, bugs, ideas, money and other offers - give us a shout -  <a href="mail
 The following is a few notes regarding the current beautify for iOS framework that might help you in your development:
 
  + We currently beautify the following controls: `UITextField`, `UIButton`, `UILabel`, `UINavigationBar`, `UITableViewCell`, `UISwitch`, `UIViewController`, `UIImageView` and `UIBarButtonItem` - there will be more to follow ...
- + We have added a highlighted state to `UITextField` which is indicates when a text field is being edited. We think this is pretty cool!
+ + We have added a highlighted state to `UITextField` which indicates when a text field is being edited. We think this is pretty cool!
  
 
 
