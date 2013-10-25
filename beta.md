@@ -44,9 +44,10 @@ The first step is to obtain a copy of the beautify iOS code. There are two separ
 + **beautify-ios** - this framework enhances the capabilities of the UIKit controls, adding shadows, gradients, borders and much more. It is open source and hosted on [GitHub](https://github.com/beautify/beautify-ios).
 + **beautify-ios-streaming** - this framework connects your app to a live design session.
 
-Both frameworks are included in the following download:
+Both frameworks are available to download below:
 
- + **TODO:** add S3 download link 
++ [Beautify-1.0.0.zip](https://s3-eu-west-1.amazonaws.com/beautify/Beautify-1.0.0.zip)
++ [BeautifyStreaming-1.0.0.zip](https://s3-eu-west-1.amazonaws.com/beautify/BeautifyStreaming-1.0.0.zip)
 
 ### Add the required frameworks to your app
 
