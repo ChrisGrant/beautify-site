@@ -9,7 +9,7 @@ So glad you could join us ...
 
 If you have reached this page, you are lucky enough to have been granted access to the beta version of beautify for iOS. We have been hard at work creating what we think is a pretty awesome tool for creating beautiful apps. But before we add too many whistles and bells we'd like to share it with you and see what you think.
 
-This page contains some (brief) instructions that will get you up and running with beautify. If you get stuck or find and bugs, please give us a shout. - <a href="mailto:enquiries@beautify.io">enquiries@beautify.io</a>
+This page contains some (brief) instructions that will get you up and running with beautify. If you get stuck or find and bugs, please give us a shout. - <a href="mailto:feedback@beautify.io">feedback@beautify.io</a>
 
 Finally, I'd like to ask you a favor. What we need more than anything else is your thoughts, ideas and feelings. We'd love it if you could help us make beautify even better.
 
@@ -25,15 +25,17 @@ From bland to beautiful.
 
 The following is a brief description of the process before we get into the details.
 
-1. Download and add the **beautify-ios** and **beautify-ios-streaming** (plus dependencies) frameworks to your app. The **beautify-ios** framework will magically enhance the graphical capabilities of the existing UIKit controls, while the **beautify-ios-streaming** framework connects your app to the web-based designer.
+1. Download and add the **Beautify** and **BeautifyStreaming** (plus dependencies) frameworks to your app. The **Beautify** framework will magically enhance the graphical capabilities of the existing UIKit controls, while the **BeautifyStreaming** framework connects your app to the web-based designer.
 2. Add a couple of lines of code to your app to connect to the design server.
 3. Sign up to use the web-based designer, which is located at [designer.beautify.io](http://designer.beautify.io/), using the details that will have been sent to you via email.
 4. Get creative live-styling your app!
 5. When you are done, grab the design as a JSON file and include it in your app.
-6. For the release build, you just need the **beautify-ios** framework and your JSON file.
+6. For the release build, you just need the **Beautify** framework and your JSON file.
 7. Bask in the glory of your beautiful app and profit!
 
-That all sounds pretty simple doesn't it? If you need more detailed instructions read on ...   
+That all sounds pretty simple doesn't it? If you need more detailed instructions read on, or alternatively watch the following introduction video:
+
+<iframe width="480" height="360" src="//www.youtube.com/embed/QqJLbsI23js" frameborder="0"> </iframe>  
 
 ## Enabling beautify within your app
 
@@ -41,8 +43,8 @@ That all sounds pretty simple doesn't it? If you need more detailed instructions
 
 The first step is to obtain a copy of the beautify iOS code. There are two separate frameworks that you need in order to run a live design sessions. These are:
 
-+ **beautify-ios** - this framework enhances the capabilities of the UIKit controls, adding shadows, gradients, borders and much more. It is open source and hosted on [GitHub](https://github.com/beautify/beautify-ios).
-+ **beautify-ios-streaming** - this framework connects your app to a live design session.
++ **Beautify** - this framework enhances the capabilities of the UIKit controls, adding shadows, gradients, borders and much more. It is open source and hosted on [GitHub](https://github.com/beautify/beautify-ios).
++ **BeautifyStreaming** - this framework connects your app to a live design session.
 
 Both frameworks are available to download below:
 
@@ -84,7 +86,11 @@ If you have already signed up visit [designer.beautify.io](http://designer.beaut
 
 ### Connecting your device
 
-In order to live-style your app you need to make a connection to the web-based beautify designer. To make a connection, first import the following header:
+In order to live-style your app you need to make a connection to the web-based beautify designer. To do this, you will need to add the **BeautifyStreaming** framework to your project:
+
+ + Copy the **BeautifyStreaming.framework** into the *Frameworks* group in your project
+
+To make a connection, import the following header:
 
     #import <BeautifyStreaming/BeautifyStreaming.h>
 
