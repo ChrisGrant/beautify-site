@@ -19,27 +19,49 @@ From bland to beautiful.
 
 <img class="process" src="images/introducing.png"/>
 
-# Beautifying your app
+# Quick Start
 
-## The beautify process
+Beautify is composed of two separate components:
 
-The following is a brief description of the process before we get into the details.
+1. The iOS frameworks which enhance the rendering capabilities of UIKit controls.
+2. A web-based service which allows you to live-style your beautified app.
 
-1. Download and add the **Beautify** and **BeautifyStreaming** (plus dependencies) frameworks to your app. The **Beautify** framework will magically enhance the graphical capabilities of the existing UIKit controls, while the **BeautifyStreaming** framework connects your app to the web-based designer.
-2. Add a couple of lines of code to your app to connect to the design server.
-3. Sign up to use the web-based designer, which is located at [designer.beautify.io](http://designer.beautify.io/), using the details that will have been sent to you via email.
-4. Get creative live-styling your app!
-5. When you are done, grab the design as a JSON file and include it in your app.
-6. For the release build, you just need the **Beautify** framework and your JSON file.
-7. Bask in the glory of your beautiful app and profit!
+In order to get you up-and-running as quickly as possible, we have created a simple calculator app for you to download. This Xcode project contains all of the required frameworks so that you can simply build and run.
 
-That all sounds pretty simple doesn't it? If you need more detailed instructions read on, or alternatively watch the following introduction video:
+Download the following, unzip and open it within Xcode:
+
++ [BeautifyCalculator-1.0.1.zip](https://s3-eu-west-1.amazonaws.com/beautify/BeautifyCalculator-1.0.1.zip)
+
+This project is a very simple, single view controller calculator. If you open **AppDelegate.m** you will see the following:
+	
+	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+	{
+	    // activate beautify - this enhances the capabilities of the UIKit controls
+	    [[BYBeautify instance] activate];
+	    
+	    // connect to a live design session
+	    [[BYBeautifyStreamer instance] initiateDesignSessionWithUsername:@"YOUR_USER_NAME"];
+	    
+	    return YES;
+	}
+
+This is all that is required to enabled beautify and connect to the web-based designer. The beautify framework, that enhances the UIKit controls, is open source and [available on GitHub](https://github.com/beautify/beautify-ios). At this point, you could play around with the new API methods that beautify adds to your controls (see the GitHub project for documentation), however, live-styling your application is much more fun ...
+
+You should have received details of how to sign-up for the web-based designer in your welcome email. Go ahead and do that now, and also update the code shown above replacing **YOUR_USER_NAME** with the name you used to sign up.
+
+The web-based designer at [designer.beautify.io](http://designer.beautify.io/) creates a live connection to your device (or multiple devices) allowing you to apply one of a number of default themes, or create your own. 
+
+For a quick introduction to the whole process, see the video below:
 
 <iframe width="480" height="360" src="//www.youtube.com/embed/QqJLbsI23js" frameborder="0"> </iframe>  
 
-## Enabling beautify within your app
+If you want to know how to use beautify in your own app, or how to use it in an app you submit to the App Store, then read on!
 
-### Obtain the iOS framework
+<img class="process" src="images/introducing.png"/>
+
+# Enabling beautify within your own app
+
+## Obtain the iOS frameworks
 
 The first step is to obtain a copy of the beautify iOS code. There are two separate frameworks that you need in order to run a live design sessions. These are:
 
@@ -48,10 +70,10 @@ The first step is to obtain a copy of the beautify iOS code. There are two separ
 
 Both frameworks are available to download below:
 
-+ [Beautify-1.0.0.zip](https://s3-eu-west-1.amazonaws.com/beautify/Beautify-1.0.0.zip)
-+ [BeautifyStreaming-1.0.0.zip](https://s3-eu-west-1.amazonaws.com/beautify/BeautifyStreaming-1.0.0.zip)
++ [Beautify-1.0.1.zip](https://s3-eu-west-1.amazonaws.com/beautify/Beautify-1.0.1.zip)
++ [BeautifyStreaming-1.0.1.zip](https://s3-eu-west-1.amazonaws.com/beautify/BeautifyStreaming-1.0.1.zip)
 
-### Add the required frameworks to your app
+## Add the required frameworks to your app
 
 In order to use beautify you need to add the framework to your project:
 
@@ -66,7 +88,7 @@ Beautify also depends on the following frameworks which you must also add to you
 
 Please note, the frameworks marked with a dagger (†) are not required for release builds of your app.
 
-### Enabling beautify within your project
+## Activate beautify
 
 Within **AppDelegate.m** import the framework header:
 
@@ -84,7 +106,7 @@ A faster and more convenient way of styling your application is to connect to a 
 
 If you have already signed up visit [designer.beautify.io](http://designer.beautify.io/) and login to your personal design session.
 
-### Connecting your device
+## Connect your device
 
 In order to live-style your app you need to make a connection to the web-based beautify designer. To do this, you will need to add the **BeautifyStreaming** framework to your project:
 
@@ -106,13 +128,14 @@ Using your own username of course!
 
 The beautify streamer creates a socket connection to the web-based beautify designer. Any changes made via the web-based designer should be reflected immediately on your device. You can even connect multiple devices to a single session!
 
-### Make it beautiful
+## Make it beautiful
 
 Once you have logged in to the designer and started your device with the beautify streamer code above you should now be in a position to live-style your app. Go ahead ... have fun ... go crazy!
 
 <img src="images/beautified-app.png"/>
 
-## Releasing your app
+
+# Releasing your app
 
 Have you finished playing with the designer? ... yes? ... good. It's now time to create a release build of your application.
 
