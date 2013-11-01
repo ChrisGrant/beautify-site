@@ -53,7 +53,7 @@ The web-based designer at [designer.beautify.io](http://designer.beautify.io/) c
 
 For a quick introduction to the whole process, see the video below:
 
-<iframe width="480" height="360" src="//www.youtube.com/embed/QqJLbsI23js" frameborder="0"> </iframe>  
+<iframe width="480" height="360" src="//www.youtube.com/embed/PDX9aaw4y48" frameborder="0"> </iframe>  
 
 If you want to know how to use beautify in your own app, or how to use it in an app you submit to the App Store, then read on!
 
