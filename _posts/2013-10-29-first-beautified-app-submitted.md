@@ -24,6 +24,6 @@ One of the great things about Beautify is that you can just drop in the framewor
 
 I spent most of my time trying to find a color for that navigation bar that worked nicely on top of the map view. I tried all kinds of colors before I was happy, and thanks to Beautify this didn't take long at all. Having the option to customize the switch and slider in the settings screen was great too. I'm a huge fan of simple, stylish apps that are great at doing one job. With the help of Beautify, I was able to achieve this in a single weekend!
 
-Sentri is currently awaiting review with Apple, and I'll post a link to the download as soon as it becomes available!
+You can download sentri for free now from the <a href="http://bit.ly/1iM8FMZ">App Store</a>.
 
 - Chris G.
