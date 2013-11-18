@@ -3677,7 +3677,10 @@ body {
   position: relative;
   padding-top: 98px;
 }
-header .navbar-brand {
+header.navbar {
+  transition: all 0.2s;
+}
+header.navbar .navbar-brand {
   display: inline-block;
   background-image: url("images/logo.svg");
   background-repeat: no-repeat;
@@ -3687,26 +3690,50 @@ header .navbar-brand {
   background-size: contain;
   min-width: 200px;
   padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
   line-height: 98px;
+  transition: all 0.2s;
 }
-.no-svg header .navbar-brand {
+.no-svg header.navbar .navbar-brand {
   background-image: url("images/logo.png");
 }
 @media (max-width: 767px) {
-  header .navbar-brand {
+  header.navbar .navbar-brand {
     margin-left: 15px;
   }
 }
-header .beautify-navbar-collapse li {
+header.navbar .navbar-nav > li > a {
+  transition: all 0.2s;
+}
+header.navbar .navbar-right {
+  margin-right: 0;
+}
+header.navbar .beautify-navbar-collapse li {
   text-transform: lowercase;
   font-size: 20px;
+}
+header.navbar.scrolled {
+  min-height: 56px;
+}
+header.navbar.scrolled .navbar-brand {
+  line-height: 42px;
+  margin: 7px 0;
+}
+@media (min-width: 768px) {
+  
+}
+header.navbar.scrolled .navbar-nav > li > a {
+  padding-top: 15.5px;
+  padding-bottom: 15.5px;
 }
 footer {
   background-color: #3b4455;
   color: #ffffff;
-  height: 86px;
+  height: 56px;
+}
+footer .row {
+  margin-left: 0;
+  margin-right: 0;
 }
 footer .logo {
   display: inline-block;
@@ -3717,9 +3744,8 @@ footer .logo {
   overflow: hidden;
   background-size: contain;
   padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 86px;
+  margin: 7px 0;
+  line-height: 42px;
 }
 .no-svg footer .logo {
   background-image: url("images/logo.png");
@@ -3735,7 +3761,7 @@ footer .tagline {
   font-size: 20px;
   font-weight: 400;
   text-transform: lowercase;
-  line-height: 86px;
+  line-height: 56px;
   padding: 0;
   margin-top: 0;
   margin-bottom: 0;
