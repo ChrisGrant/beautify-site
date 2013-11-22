@@ -1,4 +1,4 @@
-@footer-height: 86px;
+@footer-height: 56px;
 
 footer {
   background-color: @brand-primary;
@@ -6,13 +6,17 @@ footer {
 
   height: @footer-height;
 
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .logo {
     display: inline-block;
     .text-to-image("images/logo.svg");
     padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: @footer-height;
+    margin: (@footer-height * 0.125) 0;
+    line-height: (@footer-height * 0.75);
 
     .no-svg & {
       background-image: url("images/logo.png");

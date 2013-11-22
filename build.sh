@@ -8,5 +8,5 @@ lessc style.less > style.css
 echo ''
 
 # tidy up the JS
-echo 'uglifyjs scripts/svgeezy.js scripts/modernizr.custom.js scripts/jquery-1.10.2.min.js bootstrap/js/transition.js bootstrap/js/collapse.js --mangle --compress > script.js'
-uglifyjs scripts/svgeezy.js scripts/modernizr.custom.js scripts/jquery-1.10.2.min.js bootstrap/js/transition.js bootstrap/js/collapse.js --mangle --compress > script.js
+echo 'uglifyjs scripts/svgeezy.js scripts/modernizr.custom.js scripts/jquery-1.10.2.min.js scripts/animated-header.js bootstrap/js/transition.js bootstrap/js/collapse.js --mangle --compress > script.js'
+uglifyjs scripts/svgeezy.js scripts/modernizr.custom.js scripts/jquery-1.10.2.min.js scripts/animated-header.js bootstrap/js/transition.js bootstrap/js/collapse.js --mangle --compress > script.js
