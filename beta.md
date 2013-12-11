@@ -30,7 +30,7 @@ In order to get you up-and-running as quickly as possible, we have created a sim
 
 Download the following, unzip and open it within Xcode:
 
-+ [BeautifyCalculator-1.0.1.zip](https://s3-eu-west-1.amazonaws.com/beautify/BeautifyCalculator-1.0.1.zip)
++ [BeautifyCalculator-1.0.2.zip](https://s3-eu-west-1.amazonaws.com/beautify/BeautifyCalculator-1.0.2.zip)
 
 This project is a very simple, single view controller calculator. If you open **AppDelegate.m** you will see the following:
 	
@@ -70,8 +70,8 @@ The first step is to obtain a copy of the beautify iOS code. There are two separ
 
 Both frameworks are available to download below:
 
-+ [Beautify-1.0.1.zip](https://s3-eu-west-1.amazonaws.com/beautify/Beautify-1.0.1.zip)
-+ [BeautifyStreaming-1.0.1.zip](https://s3-eu-west-1.amazonaws.com/beautify/BeautifyStreaming-1.0.1.zip)
++ [Beautify-1.0.5.zip](https://s3-eu-west-1.amazonaws.com/beautify/Beautify-1.0.5.zip)
++ [BeautifyStreaming-1.0.2.zip](https://s3-eu-west-1.amazonaws.com/beautify/BeautifyStreaming-1.0.2.zip)
 
 ## Add the required frameworks to your app
 
