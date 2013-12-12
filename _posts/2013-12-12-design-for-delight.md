@@ -2,7 +2,7 @@
 layout: post
 author: godds
 title: Design for delight
-summary: TODO
+summary: Adding moments of delight to an app can drastically improve user engagement, and beautify can make this really straightforward.
 categories:
 ---
 
