@@ -17,7 +17,19 @@ Probably the most noticeable new feature in this release is the home screen:
 
 The idea here is that you can quickly see a range of themes at-a-glance. We have also started work on a 'Shared Themes' section which will allow you to share your creations with other beautify users in a future release.
 
+###HTTPS websockets
+
 Another significant change we have made is to use HTTPS for the websocket communication with the iOS device / simulator. This solves the issue that some of our user's were facing where their ISP was blocking or corrupting websocket data.
+
+###Pop-out theme previews
+
+Some of our users also pointed out that they kept having to switch between the editor and their themes list in order to preview the theme they were working on. in this release we have added a pop-out preview that will always display the theme being streamed to your iOS device. As this is a separate window, you can position it where you like.
+
+You can access this new pop-out using the button indicated below:  
+
+<img src="{{ site.baseurl }}/assets/beautify-pop-out-preview.jpg"/>
+
+###And finally
 
 If you have any thoughts or ideas, please get in touch.
 
