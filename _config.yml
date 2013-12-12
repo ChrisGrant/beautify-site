@@ -2,7 +2,7 @@ name: beautify
 markdown: maruku
 pygments: false
 
-baseurl: http://sl-ws-74.scottlogic.co.uk/beautify-site/_site #http://beautify.io
+baseurl: http://beautify.io
 
 debug: false
 
