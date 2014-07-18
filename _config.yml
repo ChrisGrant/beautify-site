@@ -6,7 +6,7 @@ baseurl: http://beautify.io
 
 debug: false
 
-exclude: [README.md, bootstrap, build.sh, less, style.less, scripts]
+exclude: [README.md, bootstrap, build.sh, less, style.less, Gruntfile.js, modernizr-dev.js, scripts]
 
 authors:
     ceberhardt:
