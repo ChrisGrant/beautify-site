@@ -1,6 +1,4 @@
 name: beautify
-markdown: maruku
-pygments: false
 
 baseurl: http://beautify.io
 
