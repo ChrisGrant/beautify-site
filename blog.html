@@ -16,7 +16,7 @@ title: Blog
           </a>
         </h3>
         <h5 class="sub author">
-          {% assign author = site.authors[post.author] %}
+          {% assign author = site.data.authors[post.author] %}
           by {{ author.name }},
           on {{ post.date | date: "%d %b %Y" }}
           <img src="http://www.gravatar.com/avatar/{{ author.gravatar }}" alt="{{ author.name }}" class="img-circle hidden-sm hidden-xs" />
