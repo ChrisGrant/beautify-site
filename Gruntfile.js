@@ -28,7 +28,8 @@ module.exports = function(grunt) {
         
         browserify: {
             build: {
-                "script.js": [ "scripts/**/*.js" ]
+                src: [ "scripts/download.js" ],
+                dest: "script.js"
             }
         },
         
