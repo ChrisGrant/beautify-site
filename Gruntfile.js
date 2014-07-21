@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-    
+
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-browserify');
@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 	  var devOutputFolder = 'build/';
 
     var taskConfig = {
-        
+
         pkg: grunt.file.readJSON("package.json"),
 
         copy: {
@@ -28,8 +28,10 @@ module.exports = function(grunt) {
         },
 
         includereplace: {
-            src: ['*.html'],
-            dest: devOutputFolder
+            dist: {
+              src: '*.html',
+              dest: "build/"
+            }
         },
 
         less: {
@@ -39,7 +41,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-        
+
         autoprefixer: {
             build: {
                 files: {
@@ -47,14 +49,14 @@ module.exports = function(grunt) {
                 }
             }
         },
-        
+
         browserify: {
             build: {
                 src: [ "scripts/download.js" ],
                 dest: "build/script.js"
             }
         },
-        
+
         uglify: {
             build: {
                 files: {
@@ -62,7 +64,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-        
+
         modernizr: {
             build: {
                 devFile: "modernizr-dev.js",
@@ -72,7 +74,7 @@ module.exports = function(grunt) {
 
         watch: {
             build: {
-                files: ['*.html', 'style.css', 'images/**/*.*', 'less/**/*.*', 'scripts/**/*.*'],
+                files: ['*.html', 'style.css', 'images/**/*.*', 'less/**/*.*', 'scripts/**/*.*', '_includes/**/*.*'],
                 tasks: ["copy", "includereplace", "less", "autoprefixer", "browserify", "modernizr", "watch"]
             }
         },
@@ -83,9 +85,9 @@ module.exports = function(grunt) {
             },
             src: ['**']
         }
-        
+
     };
-    
+
     grunt.initConfig(taskConfig);
 
     grunt.registerTask("dev", [ "copy", "includereplace", "less", "autoprefixer", "browserify", "modernizr", "watch" ]);
