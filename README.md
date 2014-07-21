@@ -11,15 +11,11 @@ This project makes use of [npm](https://www.npmjs.org/) dependencies for local d
 
 ## Testing locally
 
-The first step of building the site locally is to run the [Grunt](http://gruntjs.com/) dev build:
+To build the site locally, run the [Grunt](http://gruntjs.com/) dev build:
 
     grunt dev
 
-The Jekyll website has some good instructions of the required [configuration for Github Pages](http://jekyllrb.com/docs/github-pages/). To preview the site locally use the Jekyll server:
-
-    jekyll serve --baseurl ''
-
-This will server the site at `localhost:4000`.
+Open up the `build/index.html` file, and you should see the beautify site.
 
 ## Building for release
 
@@ -27,4 +23,10 @@ The build process, amongst other things, compiles the less into CSS and optimise
 
 	grunt build
 
-When all is beautiful, push to `gh-pages`.
+Open up the `build/index.html` file, and you should see the beautify site. Test that it works with the optimised JavaScript code and that the website looks ready to release.
+
+Once you are happy, run:
+
+	grunt release
+
+This will publish whatever is in the `build` directory to the gh-pages branch, and it should appear on [beautify.io](http://beautify.io/) site within 10 minutes.
