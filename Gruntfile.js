@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
 
+    grunt.loadNpmTasks('grunt-config');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-browserify');
@@ -10,18 +11,26 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-gh-pages');
 
-	  var devOutputFolder = 'build/';
-
     var taskConfig = {
 
         pkg: grunt.file.readJSON("package.json"),
+
+        config: {
+          global: {
+            options: {
+              variables: {
+                'outputFolder': 'build/'
+              }
+            }
+          }
+        },
 
         copy: {
           dev: {
                 files: [
 	                {
 	                    src: ['*.html', '*.ico', 'images/**/*.*', 'CNAME', '*.js', '*.css'],
-	                    dest: devOutputFolder
+	                    dest: '<%= grunt.config.get("outputFolder") %>'
 	                }
                 ]
               }
@@ -30,14 +39,14 @@ module.exports = function(grunt) {
         includereplace: {
             dist: {
               src: '*.html',
-              dest: "build/"
+              dest: '<%= grunt.config.get("outputFolder") %>'
             }
         },
 
         less: {
             build: {
                 files: {
-                    "build/style.css": "style.less"
+                    '<%= grunt.config.get("outputFolder") %>script.js': "style.less"
                 }
             }
         },
@@ -45,7 +54,7 @@ module.exports = function(grunt) {
         autoprefixer: {
             build: {
                 files: {
-                    "build/style.css": "build/style.css"
+                    '<%= grunt.config.get("outputFolder") %>style.css': '<%= grunt.config.get("outputFolder") %>style.css'
                 }
             }
         },
@@ -53,14 +62,14 @@ module.exports = function(grunt) {
         browserify: {
             build: {
                 src: [ "scripts/download.js" ],
-                dest: "build/script.js"
+                dest: '<%= grunt.config.get("outputFolder") %>script.js'
             }
         },
 
         uglify: {
             build: {
                 files: {
-                    "build/script.min.js": [ devOutputFolder + "script.js" ]
+                    '<%= grunt.config.get("outputFolder") %>script.min.js': '<%= grunt.config.get("outputFolder") %>script.js'
                 }
             }
         },
@@ -68,7 +77,7 @@ module.exports = function(grunt) {
         modernizr: {
             build: {
                 devFile: "modernizr-dev.js",
-                outputFile: "build/modernizr-custom.min.js"
+                outputFile: '<%= grunt.config.get("outputFolder") %>modernizr-custom.min.js'
             }
         },
 
@@ -81,7 +90,7 @@ module.exports = function(grunt) {
 
         'gh-pages': {
             options: {
-                base: devOutputFolder
+                base: '<%= grunt.config.get("outputFolder") %>'
             },
             src: ['**']
         }
@@ -90,8 +99,8 @@ module.exports = function(grunt) {
 
     grunt.initConfig(taskConfig);
 
-    grunt.registerTask("dev", [ "copy", "includereplace", "less", "autoprefixer", "browserify", "modernizr", "watch" ]);
-    grunt.registerTask("build", [ "copy", "includereplace", "less", "autoprefixer", "browserify", "uglify", "modernizr" ]);
-    grunt.registerTask("release", [ "copy", "includereplace", "less", "autoprefixer", "browserify", "uglify", "modernizr", "gh-pages"]);
+    grunt.registerTask("dev", ["config", "copy", "includereplace", "less", "autoprefixer", "browserify", "modernizr", "watch" ]);
+    grunt.registerTask("build", ["config", "copy", "includereplace", "less", "autoprefixer", "browserify", "uglify", "modernizr" ]);
+    grunt.registerTask("release", ["config", "copy", "includereplace", "less", "autoprefixer", "browserify", "uglify", "modernizr", "gh-pages"]);
 
 };
