@@ -1,8 +1,4 @@
----
-layout: default
-title: Home
----
-{% include header.html %}
+@@include('_includes/header.html', {"title" : "beautify - home"})
 
 <section class="hero">
   <div class="container">
@@ -18,7 +14,7 @@ title: Home
 <section class="feature beauty-is-a-struggle">
   <div class="container">
     <div class="row">
-      <img class="col-lg-4 col-md-4 col-sm-4 hidden-xs" src="{{ site.baseurl }}/images/beauty-is-a-struggle.svg" alt="Beauty is a struggle" />
+      <img class="col-lg-4 col-md-4 col-sm-4 hidden-xs" src="images/beauty-is-a-struggle.svg" alt="Beauty is a struggle" />
       <h3 class="title col-xs-12 visible-xs">Beauty is a struggle</h3>
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
         <p>App stores are crowded places. Everyone wants their app to stand out from the crowd, and what better way to do that than make it beautiful?<br/>
@@ -40,22 +36,22 @@ title: Home
       <div class="col-lg-12 col-md-12 col-sm-12">
         <h3 class="title">Introducing beautify for iOS</h3>
         <p>The beautify team have experienced the struggle to create beautiful apps on too many occasions. A few months ago, after a bit of brainstorming, we came up with a radical new approach to styling iOS apps, and we want to share it with you. <strong>With beautify for iOS, here are the simple steps you take...</strong></p>
-        <img class="process" src="{{ site.baseurl }}/images/introducing.svg" />
+        <img class="process" src="images/introducing.svg" />
         <ol class="process row">
           <li class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-            <img src="{{ site.baseurl }}/images/01.svg" alt="01" class="number" />
+            <img src="images/01.svg" alt="01" class="number" />
             Add the beautify framework to your existing app - this will enhance the capabilities of UIKit controls, adding gradients, shadows, borders and a whole host of whistles and bells.
           </li>
           <li class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-            <img src="{{ site.baseurl }}/images/02.svg" alt="02" class="number" />
+            <img src="images/02.svg" alt="02" class="number" />
             Run your app on one or more devices, and make live changes to the style of the UI elements.
           </li>
           <li class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-            <img src="{{ site.baseurl }}/images/03.svg" alt="03" class="number" />
+            <img src="images/03.svg" alt="03" class="number" />
             When you are happy, export the style as a configuration file and add this to your build.
           </li>
           <li class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-            <img src="{{ site.baseurl }}/images/04.svg" alt="04" class="number" />
+            <img src="images/04.svg" alt="04" class="number" />
             <strong>Bask in the glory of your beautiful app!</strong>
           </li>
         </ol>
@@ -67,7 +63,7 @@ title: Home
 <section class="feature what-next">
   <div class="container">
     <div class="row">
-      <img class="col-lg-5 col-md-5 col-sm-5 hidden-xs" src="{{ site.baseurl }}/images/what-next.svg" alt="What next?" />
+      <img class="col-lg-5 col-md-5 col-sm-5 hidden-xs" src="images/what-next.svg" alt="What next?" />
       <h3 class="title col-xs-12 visible-xs">What next?</h3>
       <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
         <p>Beautify is still under production, but we have a closed beta program and are aiming to make it open in the next few months.</p>
@@ -81,4 +77,4 @@ title: Home
   </div>
 </section>
 
-{% include footer.html %}
+@@include('_includes/footer.html')

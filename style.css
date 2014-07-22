@@ -4505,7 +4505,7 @@ header.navbar.scrolled .navbar-toggle {
 footer {
   background-color: #3b4455;
   color: #ffffff;
-  height: 56px;
+  min-height: 56px;
 }
 
 footer .row {
