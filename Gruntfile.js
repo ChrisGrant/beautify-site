@@ -29,7 +29,7 @@ module.exports = function(grunt) {
           dev: {
                 files: [
 	                {
-	                    src: ['*.html', '*.ico', 'images/**/*.*', 'CNAME', '*.js', '*.css'],
+	                    src: ['*.html', '*.ico', 'images/**/*.*', 'CNAME', '*.css'],
 	                    dest: '<%= grunt.config.get("outputFolder") %>'
 	                }
                 ]
