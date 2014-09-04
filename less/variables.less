@@ -18,12 +18,28 @@
 @font-weight:            400;
 @font-weight-bold:       600;
 @font-size-base:         16px;
+@font-size-large:        ceil(@font-size-base * 1.125); // ~18px
+@font-size-small:        ceil(@font-size-base * 0.75); // ~12px
+@font-size-h1:           floor(@font-size-base * 2.25); // ~36px
+@font-size-h2:           floor(@font-size-base * 1.875); // ~30px
+@font-size-h3:           ceil(@font-size-base * 1.5); // ~24px
+@font-size-h4:           ceil(@font-size-base * 1.125); // ~18px
+@font-size-h5:           @font-size-base;
+@font-size-h6:           ceil(@font-size-base * 0.75); // ~12px
 @text-color:             @brand-primary;
 @link-color:             @brand-blue;
 @link-hover-color:       @brand-blue;
 @line-height-base:       1.6;
 @line-height-tight:      1.2;
-@headings-font-weight:   @font-weight-bold;
+@headings-font-weight:   @font-weight;
+
+@btn-font-weight:                @font-weight;
+@btn-default-color:              @white;
+@btn-default-bg:                 @gray-darker;
+@btn-default-border:             @gray-darker;
+@btn-primary-color:              @white;
+@btn-primary-bg:                 @brand-pink;
+@btn-primary-border:             @btn-primary-bg;
 
 @border-radius-base:  0;
 @border-radius-large: 0;
@@ -40,50 +56,3 @@
 @navbar-default-link-active-bg:    mix(@brand-primary, @white, 80%);
 
 @container-lg: @container-md;
-
-@brand-primary:         #2c3340;
-@brand-primary-semi-transparent: rgba(44, 51, 64, 0.7);
-@brand-primary-light:   #626977;
-@brand-primary-lighter: #abaeb5;
-@white:                 #fff;
-@brand-magenta:         #a41555;
-@brand-pink-light:      #b359a2;
-@brand-pink:            #e83a84;
-@brand-orange:          #f98b0f;
-@brand-orange-light:    #f7a349;
-@brand-yellow:          #fdd633;
-@brand-green:           #009c41;
-@brand-green-light:     #c5d556;
-@brand-turquoise:       #00b9bc;
-
-@gray-darker:            #555555;
-@gray-dark:              #777777;
-@gray:                   #999999;
-@gray-light:             #bbbbbb;
-@gray-lighter:           #dddddd;
-
-@font-family-sans-serif: 'proxima-nova', Helvetica, Arial, sans-serif;
-@font-weight:            400;
-@font-weight-bold:       600;
-@font-size-base:         16px;
-@body-bg:                @white;
-@text-color:             @brand-primary;
-@link-color:             @brand-primary;
-@link-hover-color:       @brand-primary;
-@line-height-base:       1.6;
-@line-height-tight:      1.2;
-@headings-font-weight:   @font-weight-bold;
-
-.btn { border: none; }
-@btn-default-color: @white;
-@btn-default-bg:    #4F5664;
-@btn-primary-bg:    #E01E71;
-
-@border-radius-base:  0;
-@border-radius-large: 0;
-@border-radius-large: 0;
-
-@iphone-portrait-screen-width: 320px;
-@iphone-portrait-screen-height: 480px;
-@iphone-landscape-screen-width: @iphone-portrait-screen-height;
-@iphone-landscape-screen-height: @iphone-portrait-screen-width;

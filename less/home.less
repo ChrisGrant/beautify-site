@@ -1,7 +1,7 @@
 .hero, .feature {
   width: 100%;
   padding-top: 55px;
-  padding-bottom: 55px;
+  padding-bottom: 40px;
 
   @media (max-width: @screen-tablet) {
     padding-top: @font-size-base;
@@ -9,8 +9,6 @@
   }
 }
 .hero {
-  font-size: (@font-size-base * 1.125);
-  line-height: 1.7;
   background-color: @off-white;
   background-image: url("images/hero.svg");
   background-repeat: no-repeat;
@@ -18,14 +16,35 @@
   background-size: auto 600px;
   padding-top: 125px;
 
-  .no-svg & {
-    background-image: url("images/hero.png");
+  .title {
+    color: @brand-primary;
+    margin-top: 48px;
+    margin-bottom: 12px;
+    background-image: url("images/hero-logo.svg");
+    background-repeat: no-repeat;
+    background-position: center left;
+    text-indent: 999%;
+    font-size: 60px;
   }
 
-  .title {
-    color: @brand-blue;
-    margin-top: 24px;
-    margin-bottom: 24px;
+  .tagline {
+    margin-top: 12px;
+    margin-bottom: 45px;
+  }
+
+  .btn {
+    width: 200px;
+    &.btn-primary {
+      margin-right: 15px;
+    }
+  }
+
+  .no-svg & {
+    background-image: url("images/hero.png");
+
+    .title {
+      background-image: url("images/hero-logo.png");
+    }
   }
 
   @media (min-width: @screen-xs-max) and (max-width: @screen-md) {
@@ -100,7 +119,7 @@ img.process {
   padding: 35px 5px;
   margin: (@line-height-base * @font-size-base) 0;
 }
-  
+
 .ios {
   border-top: 2px solid @gray-light;
   position: relative;
