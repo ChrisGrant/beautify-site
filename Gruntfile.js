@@ -46,7 +46,7 @@ module.exports = function(grunt) {
         less: {
             build: {
                 files: {
-                    '<%= grunt.config.get("outputFolder") %>script.js': "style.less"
+                    '<%= grunt.config.get("outputFolder") %>style.css': "style.less"
                 }
             }
         },
