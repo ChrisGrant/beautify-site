@@ -1,0 +1,165 @@
+@bar-button-width: 70px;
+@bar-button-side-margin: 10px;
+@bar-button-top-margin: 20px;
+@navigation-bar-height: 62px;
+
+.preview {
+}
+
+.theme-preview-phone {
+
+    width: 464px;
+    height: 732px;
+    padding: 74px 70px 178px 74px;
+    margin: @line-height-computed;
+    position: relative;
+
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNDYzLjI5NHB4IiBoZWlnaHQ9IjczMS45ODRweCIgdmlld0JveD0iMCAwIDQ2My4yOTQgNzMxLjk4NCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNDYzLjI5NCA3MzEuOTg0Ig0KCSB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNBREFFQjUiIGQ9Ik00NDcuMjg1LDE4LjY1N1YwSDB2NzEzLjMyN2gxNi4wMXYxOC42NTdoNDQ3LjI4NVYxOC42NTdINDQ3LjI4NXogTTM5My43MSw1NTQuMDA3aC0zMjB2LTQ4MGgzMjBWNTU0LjAwN3oiDQoJLz4NCjxwYXRoIGZpbGw9IiM3ODdEODciIGQ9Ik0xNi4wMSwxOC42NTd2Njk0LjY2OWg0MzEuMjc1VjE4LjY1N0gxNi4wMXogTTM5My43MSw1NTQuMDA3aC0zMjB2LTQ4MGgzMjBWNTU0LjAwN3oiLz4NCjxyZWN0IHg9IjE5OC40OTciIHk9IjU5Mi4zNjIiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSI2Ni45NTgiIGhlaWdodD0iNjQuOTk1Ii8+DQo8L3N2Zz4NCg==);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 464px 732px;
+
+    h2 {
+        position: absolute;
+        top: 26px;
+        left: 16px;
+        color: @white;
+        font-weight: 400;
+        margin: 0;
+        text-align: center;
+        max-width: 430px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+
+    button.copy,
+    button.delete {
+        position: absolute;
+        bottom: 86px;
+        padding: 8px;
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        background-size: 18px;
+    }
+    button.copy {
+        left: 78px;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMi4wNDkgMy4zNzUgNDk3LjQ5NiA0OTUuNTg4Ij4NCjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMzAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRzPSIyODQuMTg5LDIxNi44MjMgMTc5LjI0MSwyMTYuODIzIDE3OS4yNDEsMTExLjg3NSAiLz4NCjxwb2x5Z29uIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIzMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBwb2ludHM9IjI5My43Myw0ODMuOTY0IDE3LjA0OSw0ODMuOTY0IDE3LjA0OSwxMDIuMzM0IDE3OS4yNDEsMTAyLjMzNCAyOTMuNzMsMjE2LjgyMyAiLz4NCjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMzAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRzPSI0NzUuMDA0LDEzMi44NjQgMzcwLjA1NiwxMzIuODY0ICAzNzAuMDU2LDI3LjkxNiAiLz4NCjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMzAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRzPSIyOTUuOTk1LDQwMC4wMDUgNDg0LjU0NSw0MDAuMDA1ICA0ODQuNTQ1LDEzMi44NjQgMzcwLjA1NiwxOC4zNzUgMjA3Ljg2MywxOC4zNzUgMjA3Ljg2MywxMjcuNzM3ICIvPg0KPC9zdmc+DQo=);
+        width: 90px;
+        padding-left: 16px;
+    }
+    button.delete {
+        right: 70px;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDMzMiAzMzIiPg0KPGNpcmNsZSBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMzAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBjeD0iMTY2IiBjeT0iMTY2IiByPSIxNTEiLz4NCjxsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIzMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iOTcuNDExIiB5MT0iOTcuNDExIiB4Mj0iMjM0LjU4OSIgeTI9IjIzNC41ODkiLz4NCjxsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIzMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iOTcuNDExIiB5MT0iMjM0LjU4OSIgeDI9IjIzNC41ODkiIHkyPSI5Ny40MTEiLz4NCjwvc3ZnPg0K);
+        width: 100px;
+        padding-left: 20px;
+        padding-right: 4px;
+    }
+}
+
+.theme-preview {
+
+    .status-bar {
+        position: absolute;
+        z-index: 1;
+    }
+
+    /* we'll manage the margins of each control individually */
+    .control-sample {
+        margin: 0;
+    }
+
+
+    /* The back and bar button items are floated over the navigation bar. To achieve the required effect
+       a fixed width is applied to each. This must also be appled to each of the 'layers', hence the
+       '.button-sample div' selector. */
+
+    .back-button, .bar-button {
+
+        width: @bar-button-width;
+
+        .button-sample {
+            margin: 0px;
+            margin-top: @bar-button-top-margin;
+
+            div {
+                width: @bar-button-width;
+                z-index: 1;
+            }
+        }
+    }
+
+    .back-button {
+        float: left;
+        margin-left: @bar-button-side-margin;
+    }
+
+    .bar-button {
+        float: right;
+        margin-right: @bar-button-side-margin;
+    }
+
+    .navigation-bar-sample {
+        margin: 0;
+        height: @navigation-bar-height;
+        .text-layer {
+            margin-top: @bar-button-top-margin;
+        }
+        div {
+            height: @navigation-bar-height;
+        }
+    }
+
+    .view-controller {
+        width: @iphone-portrait-screen-width;
+        height: (@iphone-portrait-screen-height - @navigation-bar-height);
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        overflow: hidden;
+    }
+
+    .tabbar-preview {
+      margin-top: 12px;
+      margin-left: -130px;
+
+
+      .tab-preview {
+        margin-left: 75px;
+        float:left;
+      }
+    }
+
+    .label-sample {
+        text-align: left;
+    }
+
+    .slider-sample {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .textfield-sample {
+        margin-bottom: 10px;
+    }
+
+    .imageview-sample {
+        margin-bottom: 18px;
+    }
+
+    .button-preview-container, .switch-preview-container {
+        width: 49%;
+        display: inline-block;
+    }
+
+    .loading-overlay {
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+        background-color:rgba(255, 255, 255, 0.75);
+        z-index: 9;
+        position:absolute;
+    }
+}

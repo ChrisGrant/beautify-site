@@ -1,30 +1,115 @@
----
-layout: page
-title: Use It
----
+@@include('_includes/header.html', {"title" : "beautify - download"})
 
-<div id="download" class="row">
-    
+<div class="container">
+
+  <div id="download" class="row">
+
     <section class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-        
-        <h1 data-bind="text: test"></h1>
-        
-        <h1>choose a style</h1>
-        <!-- TODO style selection-->
-        
-        <h1>choose a colour palette</h1>
-        <!-- TODO colour palette selection -->
-        
-        <div class="buttons">
-            <button type="button" class="btn btn-primary">Download</button>
-            <button type="button" class="btn btn-default">Reset</button>
-        </div>
-    </section>
-    
-    <section class="col-lg-5 col-md-5 hidden-sm hidden-xs">
-        <h1>phone</h1>
-    </section>
-    
-</div>
+      <h3 class="title">choose a style</h1>
 
-<script src="{{ site.baseurl }}/script.js" type="text/javascript"></script>
+        <!-- TODO style selection-->
+        <div class="style-selection">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="style-preview-container"></div>
+              flat
+            </div>
+            <div class="col-sm-4">
+              <div class="style-preview-container"></div>
+              material
+            </div>
+            <div class="col-sm-4">
+              <div class="style-preview-container"></div>
+              gloss
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="style-preview-container"></div>
+              iOS8
+            </div>
+            <div class="col-sm-4">
+              <div class="style-preview-container"></div>
+              iOS6
+            </div>
+            <div class="col-sm-4">
+              <div class="style-preview-container"></div>
+              droid
+            </div>
+          </div>
+        </div>
+
+        <h3>choose a colour palette</h3>
+        <!-- TODO colour palette selection -->
+        <div class="palette row">
+          <div class="col-sm-8">
+            <div class="row">
+              <div class="col-sm-2">
+                Yellow
+              </div>
+              <div class="col-sm-2">
+                Red
+              </div>
+              <div class="col-sm-2">
+                Green
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <button type="button" class="btn btn-block btn-default">Surprise Me</button>
+          </div>
+        </div>
+
+        <div class="buttons row">
+          <div class="col-sm-6">
+            <button type="button" class="btn btn-lg btn-block btn-primary">Download</button>
+          </div>
+          <div class="col-sm-6">
+            <button type="button" class="btn btn-lg btn-block btn-default">Reset</button>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="col-lg-5 col-md-5 hidden-sm hidden-xs">
+        <div class="theme-preview theme-preview-phone" data-bind="with:themeModel">
+
+          <div class="theme-preview">
+            <div style="position:relative; overflow:hidden;">
+              <img class="status-bar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUAAAAAUCAYAAAD8+OT/AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QoLEwgcPX3xnwAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAE/0lEQVR42u2aW2wUVRjHfxTUQKpBAS+IlTRK2/iAGDBqrEYtMYKoYAgo3jBgoiQ2YjTYBCpRU8uLSlTQvmgRxUtFRcHGqiEaQTRoRCl2Ld5DtFSBCFEsuz7Mf8LJYbad3R1ZLd8vmczMd87MyZzLdzsDhmEYhmEYhmEYhmEYhmEYhmEY/ZAB/ehbxgHVwDDgb2Ar8DpwwIY5MSqBLqA7Rt3B6vv9nvxY4A8gE7O9brXpvrcMKAHavfpDgNPU7jc2XP8rTgbmA0clqNu+App6q1TSDzruFi2SzcBjwCLgAaAF6AGe06Iz8meSFNY6YCfwZB/1zwf2AfWevBzYA1TEaPNKKbiPPHkZsE0G7iSv7C6VvWNDljM1QK0nWwBsBzqA2Y58JPAe8CvwBnCcU9agdfiM966hQGcvOmc98DHwPfBdAkcKOBO4tdCOuUkdccZ/oMy39hu0MDcB1wEjnPKxQKO8gQxwjc3xvMkA83R9qu4vzVJ3IPAb8IujAKcAb+q5DDAmRptrgXcj6o+RbD9Q5z2zFfgrwjM0sjMBWAzs9QzWDCm+0Jv6Ezhb93uBabq+W4or9NhX6bpeRiwk1YcjskjjmnbmSaHHPODRQjqn03vhtCKWRfEqcJGz8KYDC2XJznLka2IoVCOaKo1FqSNrBx5XuNkGzHLKNgBTpYzCBXWxrlfEVICDVe8CoBVYFqEAl8o7cUOojLxTU4DxuRm4H3jfU4BrgJnO/RKNeZlSGL6BLFGk8KDjUS7R9SPeHImiPkHFFx618khvz7dj3JelZdmLUdYXD2fpgA7gdJvjBTFMfVnlyNIKh8tV1iD5XCdkbY8IgS+PqQAXKn0RRgSZCAVYoXO55HXA58A9pgDzot4brx89p6FGYe9lMkq+o1TpeYCLgStkxF6L2f6/oQDD987MNQc4MiKpeHyRyvoKhecCK4FzgGOAE7VwRmvRGfnTrXD0Q6UmUsDXmlTbNU73KR/3NMFGFI4Ry4c5ehdAs85Xe3U6gC819gC3AU9pPhiFk/b0w0DJ0rp2GST5NuBn5QCHyEi+qPRTK7CaIDdfDMpzVYCvOBM55O0ilfXGPmA4cAPB7u98WZ4VwNHOQjLyZ7JyNBXAjcCWCO+8EfgCWK6Q9RRN/Fk5tjVeYda1BAnxb7W47o0wfE0a9xHy9JfbUCVGT4QCPKCjJEKPpJ2cYK088U/kMV5PkAOeSrCJNu4wfkeoT5pyVYApTcJdul8HXFWksjgfWaqF2QA8KytkFE4J8LIs92xgI0GutUVlpfIAWghysj8pfOoh2PHdk2N7tZoLE4CJ8uDnKJQa6kUIS4FRwAsc3GQxkmELwW5+yESlFjqBS7y6ozj0t6MFmhMdBJsnYVqiS8bxcCi+AcAJOncdCYM2Xh/eavM3UTZpAtfIMKUkr1R/PxTxTL45wAyH7u6G8gaCXxvcTZm1up/s5JIsB5g7fg6wRl7+cHnXGXnmyDO/U154Y0SkNhr4zLmvBp7Q9fosCrBZEUSSOcDpHNyIiWRQPxvET2Wp2mw+J8q5BP9W1qmPp0j+uybuxohnVhP8m+myA3ge2J2lnbEqjwpl79AC3Am8RPBbBlKKu4C3dL+ZIA9s5IY/Vm3q81UKe6uBH1RWRZBvnUHwC8wkL2JoBs5zZB8oFF6mUHRHRPu7pTSTyhGmZZgvtKE1DMMwDMMwDMMwDMMwDMMwDOOI4x+uA882NO+kPQAAAABJRU5ErkJggg=="/>
+              <div data-bind="controlPreview:barButtonItemStyle, controlPreviewTitle:'Item'" class="bar-button"> </div>
+              <div data-bind="controlPreview:backButtonItemStyle, controlPreviewTitle:'Back'" class="back-button"> </div>
+              <div data-bind="controlPreview:navigationBarStyle, controlPreviewTitle:'Home'"> </div>
+              <div class="view-controller" data-bind="viewControllerStyle:viewControllerStyle">
+                <div data-bind="controlPreview:labelStyle, controlPreviewTitle:'This is some sample text'"> </div>
+                <div data-bind="controlPreview:textFieldStyle"> </div>
+                <div data-bind="controlPreview:buttonStyle" class="button-preview-container"> </div>
+                <div data-bind="controlPreview:switchStyle" class="switch-preview-container"> </div>
+                <div data-bind="controlPreview:sliderStyle"> </div>
+                <div data-bind="controlPreview:imageViewStyle"> </div>
+                <!-- a table -->
+                <div data-bind="controlPreview:tableViewCellStyle, controlPreviewTitle:'Table Cell #1'"> </div>
+                <div data-bind="controlPreview:tableViewCellStyle, controlPreviewTitle:'Table Cell #2'"> </div>
+                <div data-bind="controlPreview:tableViewCellStyle, controlPreviewTitle:'Table Cell #3'"> </div>
+                <div class="tabbar-preview">
+                  <div class="tab-preview" data-bind="controlPreview:tabBarStyle"></div>
+                  <div class="tab-preview" data-bind="controlPreview:tabBarStyle"></div>
+                  <div class="tab-preview" data-bind="controlPreview:tabBarStyle"></div>
+                </div>
+              </div>
+              <div data-bind="attr:{class:$root.isBusy() ? 'loading-overlay fade.in' : 'loading-overlay fade'}">
+                <!-- loading indicator -->
+                @@include('../loading.html')
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+  <script src="script.js" type="text/javascript"></script>
+
+  @@include('_includes/footer.html')
