@@ -46,7 +46,7 @@ module.exports = function(grunt) {
         less: {
             build: {
                 files: {
-                    '<%= grunt.config.get("outputFolder") %>script.js': "style.less"
+                    '<%= grunt.config.get("outputFolder") %>style.css': "style.less"
                 }
             }
         },
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
         watch: {
             build: {
                 files: ['*.html', 'style.css', 'images/**/*.*', 'less/**/*.*', 'scripts/**/*.*', '_includes/**/*.*'],
-                tasks: ["copy", "includereplace", "less", "autoprefixer", "browserify", "modernizr", "watch"]
+                tasks: ["config", "copy", "includereplace", "less", "autoprefixer", "browserify", "modernizr", "watch"]
             }
         },
 
@@ -94,13 +94,13 @@ module.exports = function(grunt) {
             },
             src: ['**']
         }
-
     };
 
     grunt.initConfig(taskConfig);
 
-    grunt.registerTask("dev", ["config", "copy", "includereplace", "less", "autoprefixer", "browserify", "modernizr", "watch" ]);
-    grunt.registerTask("build", ["config", "copy", "includereplace", "less", "autoprefixer", "browserify", "uglify", "modernizr" ]);
-    grunt.registerTask("release", ["config", "copy", "includereplace", "less", "autoprefixer", "browserify", "uglify", "modernizr", "gh-pages"]);
+    grunt.registerTask("common", ["config", "copy", "includereplace", "less", "autoprefixer", "browserify", "modernizr"])
 
+    grunt.registerTask("dev", ["common", "watch" ]);
+    grunt.registerTask("build", ["common", "uglify"]);
+    grunt.registerTask("release", ["common", "uglify", "gh-pages"]);
 };
