@@ -1,4 +1,4 @@
 var ko = require('knockout'),
-    TestViewModel = require('./viewModel/testViewModel');
+    DownloadPageViewModel = require('./viewModel/downloadPageViewModel');
 
-ko.applyBindings(new TestViewModel(), document.documentElement);
+ko.applyBindings(new DownloadPageViewModel(), document.documentElement);
