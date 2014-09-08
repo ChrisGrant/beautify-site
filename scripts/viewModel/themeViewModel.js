@@ -13,27 +13,13 @@ var ThemeStyles = require('../model/themeStyles'),
     ErrorReportingService = require('../service/errorReportingService'),
     browserDetect = require('../util/browserDetect'),
     iOS7Theme = require('../model/iOS7Theme'),
+    sentriTheme = require('../model/sentriTheme'),
     ko = require('knockout');
 
 function ThemeViewModel(themeManager, parseObject, messageBox) {
     "use strict";
     var self = this;
     var data = null;
-
-    /**
-     * Publish the stored data, loading the file if required.
-     */
-    this.fetchData = function (publishData) {
-        if (data) {
-            publishData(data);
-        }
-        else {
-            themeManager.readData(self, function receiveData(newData) {
-                self.setData(newData);
-                publishData(newData);
-            });
-        }
-    };
 
     /**
      * Set data using json object, and apply it to the model.
@@ -44,22 +30,11 @@ function ThemeViewModel(themeManager, parseObject, messageBox) {
         configMapping.mapJStoThemeStyles(data.theme, self.model);
     };
 
-    /**
-     * Return the data.  If it has not been previously fetched it will return null.
-     * TODO: Deprecated.
-     * This is only used in test classes to allow shallow copies of a view model without
-     * duplicating a parse id.
-     */
-    this.getData = function(jsonData) {
-        return data;
-    };
+    // Initially just with default values.
+    var themeStyles = new ThemeStyles();
+    this.model = themeStyles;
 
-     // Initially just with default values.
-     var themeStyles = new ThemeStyles();
-     this.model = themeStyles;
-
-     this.setData(iOS7Theme);
-
+    this.setData(sentriTheme);
 }
 
 module.exports = ThemeViewModel;

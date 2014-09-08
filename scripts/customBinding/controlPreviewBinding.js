@@ -624,7 +624,7 @@ function SliderPreviewBinding() {
     ControlPreviewBindingBase.call(this);
 }
 
-// a custom binding to NavigationBarStyle instances
+// a custom binding to TabBarStyle instances
 function TabBarPreviewBinding() {
     "use strict";
     this.createControlTemplate = function(element, allBindingsAccessor) {
