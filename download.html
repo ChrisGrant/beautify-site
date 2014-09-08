@@ -71,8 +71,9 @@
 
       </section>
 
+    <!-- ko with: themeViewModel -->
       <section class="col-lg-5 col-md-5 hidden-sm hidden-xs">
-        <div class="theme-preview theme-preview-phone" data-bind="with:themeModel">
+        <div class="theme-preview theme-preview-phone" data-bind="with:model">
 
           <div class="theme-preview">
             <div style="position:relative; overflow:hidden;">
@@ -87,7 +88,7 @@
                 <div data-bind="controlPreview:switchStyle" class="switch-preview-container"> </div>
                 <div data-bind="controlPreview:sliderStyle"> </div>
                 <div data-bind="controlPreview:imageViewStyle"> </div>
-                <!-- a table -->
+
                 <div data-bind="controlPreview:tableViewCellStyle, controlPreviewTitle:'Table Cell #1'"> </div>
                 <div data-bind="controlPreview:tableViewCellStyle, controlPreviewTitle:'Table Cell #2'"> </div>
                 <div data-bind="controlPreview:tableViewCellStyle, controlPreviewTitle:'Table Cell #3'"> </div>
@@ -97,14 +98,12 @@
                   <div class="tab-preview" data-bind="controlPreview:tabBarStyle"></div>
                 </div>
               </div>
-              <div data-bind="attr:{class:$root.isBusy() ? 'loading-overlay fade.in' : 'loading-overlay fade'}">
-                <!-- loading indicator -->
-                @@include('../loading.html')
-              </div>
+
             </div>
           </div>
         </div>
       </section>
+    <!-- /ko -->
 
     </div>
 

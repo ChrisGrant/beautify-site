@@ -3,7 +3,7 @@ ThemeViewModel = require('./themeViewModel');
 
 var DownloadPageViewModel = function() {
 
-    this.themeModel = ko.observable(ThemeViewModel());
+    this.themeViewModel = ko.observable(new ThemeViewModel());
 
 };
 
