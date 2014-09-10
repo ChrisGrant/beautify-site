@@ -1,0 +1,150 @@
+// these are the default dimensions of the UIKit controls when you first add them to your interface
+//
+// NOTE: Some of these values are replicated in controlPreviewBinding.js
+@preview-height: 37px;
+@switch-preview-height: 31px;
+@switch-thumb-width: @switch-preview-height;
+@switch-preview-width: 70px;
+@button-width: 140px;
+@narrow-button-width: 75px;
+@tab-bar-hight: 45px;
+@tab-bar-width: 75px;
+
+
+ul.previews {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .preview-title {
+    margin: (@line-height-computed / 2);
+  }
+}
+
+.preview {
+  padding: (@line-height-computed / 5);
+  overflow: hidden;
+
+    .active & {
+        padding: 0;
+        border: (@line-height-computed / 5) solid @brand-primary-light;
+    }
+}
+
+
+// samples have a fixed height, but flexible width
+.control-sample {
+  margin: 10px;
+  position: relative;
+  height: @preview-height;
+  line-height: @preview-height;
+  text-align: center;
+
+  // stack the child divs one on top of the other, in layers
+  > div {
+    height: @preview-height;
+    width: 100%;
+    position: absolute;
+  }
+}
+
+.button-sample {
+    width: @button-width;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.tabbar-sample {
+
+  .background-layer {
+    height: @tab-bar-hight;
+    width: @tab-bar-width;
+    margin-left: 92px;
+  }
+
+  .imagetint-layer {
+    height: 100%;
+    width: 100%;
+}
+
+  .backgroundimage-layer {
+    margin-left: 7.5px;
+    margin-top: 4.5px;
+    height: 80%;
+    width: 80%;
+  }
+}
+
+
+.back-button, .bar-button {
+    width: @narrow-button-width;
+}
+
+.tableviewcell-sample {
+    .text-layer {
+        text-align: left;
+        margin-left: 10px; 
+    }
+
+    img {
+        margin-top: 9px;
+        position: absolute;
+        right: 0;
+    }
+}
+
+.textfield-sample {
+    .text-layer {
+        text-align: left;
+        margin-left: 10px; 
+    }
+}
+
+.slider-sample {
+    .maximum-track-layer {
+        width: 75%;
+        right: 0;
+    }
+
+    .minimum-track-layer {
+        width: 25%;
+    }
+
+    // make the thumb square, and align it to the right
+    .thumb-layer {
+        height: @preview-height;
+        width: @preview-height;
+        left: 25%;
+        margin-left: -(@preview-height / 2); 
+    }
+}
+
+// the switch sample has a fixed width, and aligns to center
+.switch-sample {
+    width: @switch-preview-width;
+    margin-left: auto;
+    margin-right:auto;
+
+    // make the thumb square, and align it to the right
+    .thumb-layer {
+        height: @switch-thumb-width;
+        width: @switch-thumb-width;
+        right: 0;
+    }
+
+    // place the on text to the left
+    .text-layer {
+        text-align: center;
+        width: (@switch-preview-width - @switch-thumb-width);
+        line-height: @switch-preview-height;
+    } 
+
+    .highlight-layer {
+        height: (@switch-preview-height / 2);
+        margin-top: (@switch-preview-height / 2);
+    }
+
+    div {
+        height: @switch-preview-height;
+    }
+}
