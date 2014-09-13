@@ -1,13 +1,3 @@
-.hero, .feature {
-  width: 100%;
-  padding-top: 55px;
-  padding-bottom: 40px;
-
-  @media (max-width: @screen-tablet) {
-    padding-top: @font-size-base;
-    padding-bottom: @font-size-base;
-  }
-}
 .hero {
   background-color: @off-white;
   background-image: url("images/hero.svg");
@@ -15,6 +5,8 @@
   background-position: center center;
   background-size: auto 600px;
   padding-top: 125px;
+  padding-bottom: 40px;
+  width: 100%;
 
   .title {
     color: @brand-primary;
@@ -47,6 +39,10 @@
     }
   }
 
+  @media (max-width: @screen-sm-min) {
+    padding-top: @font-size-base;
+    padding-bottom: @font-size-base;
+  }
   @media (min-width: @screen-xs-max) and (max-width: @screen-md) {
     background-position: -500px center;
   }
@@ -57,59 +53,75 @@
   }
 }
 
-.beauty-is-a-struggle {
+.features {
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid @gray-light;
 
-  img {
-    max-height: 270px;
+  @media (min-width: @screen-sm-min) {
+    padding: 40px 0 20px 0;
   }
 
-  .title {
-    color: @brand-orange;
-    margin-top: 12px;
-  }
+  .feature {
 
-  ul.struggles {
-    margin-top: (2 * @font-size-base);
-    margin-left: 0;
-    margin-right: 0;
+    > h3 {
+      color: @brand-blue;
 
-    & > li {
-      font-size: (@font-size-base * 0.875);
-      padding: (@font-size-base * 0.5) 0 0 0;
+      > span {
+        font-size: 30px;
+        white-space: nowrap;
+      }
 
-      &.blue {
-        border-top: 3px solid @brand-blue;
+      @media (min-width: @screen-sm-min) {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 220px;
+        margin: 0 auto 30px auto;
+
+        &:before {
+          content: "";
+          display: block;
+          padding-top: 100%;
+
+          border-radius: 50%;
+          background-color: @brand-blue;
+        }
+
+        > span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+
+          color: @white;
+          text-align: center;
+        }
+
       }
-      &.pink {
-        border-top: 3px solid @brand-pink;
-      }
-      &.green {
-        border-top: 3px solid @brand-green;
-      }
+
     }
 
-    @media (max-width: @screen-lg) {
-      margin-top: @font-size-base;
-
-      & > li {
-        padding: 0 5px;
-        margin: 5px 0 5px -8px;
-
-        &.blue {
-          border-top: none;
-          border-left: 3px solid @brand-blue;
-        }
-        &.pink {
-          border-top: none;
-          border-left: 3px solid @brand-pink;
-        }
-        &.green {
-          border-top: none;
-          border-left: 3px solid @brand-green;
-        }
-      }
+    &.purple > h3 {
+      color: @brand-purple;
     }
+    &.green > h3 {
+      color: @brand-green;
+    }
+
+    @media (min-width: @screen-sm-min) {
+
+      &.purple > h3:before {
+        background-color: @brand-purple;
+      }
+      &.green > h3:before {
+        background-color: @brand-green;
+      }
+
+    }
+
   }
+
 }
 
 img.process {
