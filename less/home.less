@@ -60,7 +60,7 @@
   border-bottom: 1px solid @gray-light;
 
   @media (min-width: @screen-sm-min) {
-    padding: 40px 0 20px 0;
+    padding: 40px 0;
   }
 
   .feature {
@@ -195,34 +195,49 @@ img.process {
   }
 }
 
-.what-next {
+.team {
   background-color: @off-white;
+  padding: 40px 0;
 
-  .title {
-    color: @brand-blue;
-    margin-top: 12px;
+  .intro {
+    font-size: (@font-size-base * 1.25);
+    text-align: left;
+
+    @media (min-width: @screen-sm-min) {
+      text-align: center;
+      margin-bottom: 30px;
+    }
   }
 
-  form#interest {
-    margin: (3 * @font-size-base) 0 0 0;
+  .person {
+    font-size: (@font-size-base * 1.25);
 
-    @media (max-width: @screen-xs-max) {
-      margin: 0;
+    img.avatar {
+      border-radius: 50%;
     }
 
-    input {
-      border: 2px solid @gray-light;
-      padding: 12px;
+    @media (min-width: @screen-sm-min) {
+      display: block;
+      position: relative;
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto 30px auto;
+      text-align: center;
 
-      @media (max-width: @screen-md) {
-        border-bottom: none;
+      img.avatar {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
       }
     }
-    button {
-      background-color: @brand-blue;
-      color: @white;
-      padding-top: 12px;
-      padding-bottom: 12px;
+
+  }
+
+  .thanks {
+    text-align: left;
+    @media (min-width: @screen-sm-min) {
+      text-align: center;
     }
   }
+
 }
