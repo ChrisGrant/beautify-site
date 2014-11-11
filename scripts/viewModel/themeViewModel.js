@@ -6,7 +6,7 @@ var ThemeStyles = require('../model/themeStyles'),
     sentriTheme = require('../model/sentriTheme'),
     ko = require('knockout');
 
-function ThemeViewModel(themeManager, parseObject, messageBox) {
+function ThemeViewModel() {
     "use strict";
     var self = this;
     var data = null;
