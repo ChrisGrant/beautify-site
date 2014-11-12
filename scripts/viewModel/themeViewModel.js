@@ -11,20 +11,16 @@ function ThemeViewModel() {
     var self = this;
     var data = null;
 
-    /**
-     * Set data using json object, and apply it to the model.
-     */
+    // Initially just with default values.
+    var themeStyles = new ThemeStyles();
+    this.model = themeStyles;
+
+    // Set data using json object, and apply it to the model.
     this.setData = function(jsonData) {
         data = jsonData;
         console.log("Parsing JSON data for the theme with ID", jsonData.id);
         configMapping.mapJStoThemeStyles(data.theme, self.model);
     };
-
-    // Initially just with default values.
-    var themeStyles = new ThemeStyles();
-    this.model = themeStyles;
-
-    this.setData(sentriTheme);
 }
 
 module.exports = ThemeViewModel;

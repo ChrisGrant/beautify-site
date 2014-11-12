@@ -1,12 +1,34 @@
-var ko = require('knockout');
+var ko = require('knockout'),
+sentriTheme = require('../model/sentriTheme'),
+Please = require('../service/please.js'),
+PaletteColorViewModel = require('./paletteColorViewModel'),
 ThemeViewModel = require('./themeViewModel');
 
 var DownloadPageViewModel = function() {
+  var self = this;
+
+    this.regenerateColors = function() {
+      self.paletteColors.removeAll();
+      
+      var scheme = Please.make_scheme(Please.make_color({format: 'hsv'}));
+
+      for (var i = 0; i < scheme.length; i++) {
+        self.paletteColors.push(new PaletteColorViewModel(scheme[i]));
+      }
+    }
 
     this.themeViewModel = ko.observable(new ThemeViewModel());
 
+    this.themeViewModel().setData(sentriTheme);
+
+    this.themeColor = ko.observable(Please.make_color());
+
+    this.paletteColors = ko.observableArray();
+
+    this.regenerateColors();
+
     this.clickedFlatStyle = function() {
-      
+
     };
     this.clickedMaterialStyle = function() {
 
@@ -34,7 +56,7 @@ var DownloadPageViewModel = function() {
 
     };
     this.clickedSurpriseMe = function() {
-
+      self.regenerateColors();
     };
 
     this.clickedDownload = function() {

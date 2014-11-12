@@ -7,7 +7,6 @@
     <section class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
       <h3 class="title">choose a style</h1>
 
-        <!-- TODO style selection-->
         <div class="style-selection">
           <div class="row">
             <div class="col-sm-4" data-bind="click: clickedFlatStyle">
@@ -40,32 +39,23 @@
         </div>
 
         <h3>choose a colour palette</h3>
-        <!-- TODO colour palette selection -->
+
         <div class="palette row">
+
           <div class="col-sm-8">
-            <div class="row">
-              <div class="col-sm-4">
-                <button type="button" class="btn btn-lg btn-block btn-default" data-bind="click: clickedYellowColorPalette">
-                  Yellow
-                </button>
-              </div>
-              <div class="col-sm-4">
-                <button type="button" class="btn btn-lg btn-block btn-default" data-bind="click: clickedRedColorPalette">
-                  Red
-                </button>
-              </div>
-              <div class="col-sm-4">
-                <button type="button" class="btn btn-lg btn-block btn-default" data-bind="click: clickedGreenColorPalette">
-                  Green
-                </button>
-              </div>
+            <!-- ko foreach: paletteColors -->
+            <div class="colorPaletteColorContainer" data-bind="style: { background: colorHex }">
+              <input class="colorPaletteTextField" data-bind="value: colorHex" />
             </div>
+            <!-- /ko -->
           </div>
+
           <div class="col-sm-4">
-            <button type="button" class="btn btn-lg btn-block btn-default" data-bind="click: clickedSurpriseMe">
+            <button type="button" class="btn btn-lg btn-block btn-default supriseMeButton" data-bind="click: clickedSurpriseMe">
               Suprise Me!
             </button>
           </div>
+
         </div>
 
         <div class="buttons row">
