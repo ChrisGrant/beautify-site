@@ -2,7 +2,7 @@ var ko = require('knockout');
 
 function Text(text) {
     var self = this;
-    this.color = ko.observable(text ? text.color() : "#ffffff");
+    this.color = ko.observable(text && text.color ? text.color() : "#ffffff");
     this.font = {
         "family": ko.observable(text ? text.font.family() : "Helvetica"),
         "size": ko.observable(text && text.font && text.font.size ? text.font.size() : 0),

@@ -13,13 +13,17 @@ function ThemeViewModel() {
 
     // Initially just with default values.
     var themeStyles = new ThemeStyles();
-    this.model = themeStyles;
+    this.model = ko.observable(themeStyles);
 
     // Set data using json object, and apply it to the model.
     this.setData = function(jsonData) {
         data = jsonData;
         console.log("Parsing JSON data for the theme with ID", jsonData.id);
         configMapping.mapJStoThemeStyles(data.theme, self.model);
+    };
+
+    this.setTheme = function(theme) {
+      self.model(theme);
     };
 }
 

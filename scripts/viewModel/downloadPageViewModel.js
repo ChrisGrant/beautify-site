@@ -1,70 +1,82 @@
 var ko = require('knockout'),
-sentriTheme = require('../model/sentriTheme'),
 Please = require('../service/please.js'),
 PaletteColorViewModel = require('./paletteColorViewModel'),
+FlatThemeFactory = require('../service/flatThemeFactory'),
 ThemeViewModel = require('./themeViewModel');
 
 var DownloadPageViewModel = function() {
   var self = this;
 
-    this.regenerateColors = function() {
-      self.paletteColors.removeAll();
-      
-      var scheme = Please.make_scheme(Please.make_color({format: 'hsv'}));
+  this.activeFactory = new FlatThemeFactory();
 
-      for (var i = 0; i < scheme.length; i++) {
-        self.paletteColors.push(new PaletteColorViewModel(scheme[i]));
-      }
+  this.regenerateColors = function() {
+    self.paletteColors.removeAll();
+
+    var scheme = Please.make_scheme(Please.make_color({format: 'hsv'}));
+
+    for (var i = 0; i < 4; i++) {
+      self.paletteColors.push(new PaletteColorViewModel(scheme[i], self));
     }
+  }
 
-    this.themeViewModel = ko.observable(new ThemeViewModel());
+  this.reloadTheme = function() {
+    self.themeViewModel().setTheme(self.activeFactory.themeFromColors(self.paletteColors()));
+  };
 
-    this.themeViewModel().setData(sentriTheme);
+  this.themeColor = ko.observable(Please.make_color());
 
-    this.themeColor = ko.observable(Please.make_color());
+  this.paletteColors = ko.observableArray();
 
-    this.paletteColors = ko.observableArray();
+  this.regenerateColors();
 
-    this.regenerateColors();
+  this.themeViewModel = ko.observable(new ThemeViewModel());
 
-    this.clickedFlatStyle = function() {
+  this.reloadTheme();
 
-    };
-    this.clickedMaterialStyle = function() {
+  this.paletteColorChanged = function() {
+    self.reloadTheme();
+  };
 
-    };
-    this.clickedGlossStyle = function() {
+  this.clickedFlatStyle = function() {
+    self.activeFactory = new FlatThemeFactory();
+    self.reloadTheme();
+  };
+  this.clickedMaterialStyle = function() {
 
-    };
-    this.clickediOS8Style = function() {
+  };
+  this.clickedGlossStyle = function() {
 
-    };
-    this.clickediOS6Style = function() {
+  };
+  this.clickediOS8Style = function() {
 
-    };
-    this.clickedDroidStyle = function() {
+  };
+  this.clickediOS6Style = function() {
 
-    };
+  };
+  this.clickedDroidStyle = function() {
 
-    this.clickedYellowColorPalette = function() {
+  };
 
-    };
-    this.clickedRedColorPalette = function() {
+  this.clickedYellowColorPalette = function() {
 
-    };
-    this.clickedGreenColorPalette = function() {
+  };
+  this.clickedRedColorPalette = function() {
 
-    };
-    this.clickedSurpriseMe = function() {
-      self.regenerateColors();
-    };
+  };
+  this.clickedGreenColorPalette = function() {
 
-    this.clickedDownload = function() {
+  };
+  this.clickedSurpriseMe = function() {
+    self.regenerateColors();
+    self.reloadTheme();
+  };
 
-    };
-    this.clickedReset = function() {
+  this.clickedDownload = function() {
 
-    };
+  };
+  this.clickedReset = function() {
+
+  };
 };
 
 module.exports = DownloadPageViewModel;
