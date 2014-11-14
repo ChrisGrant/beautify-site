@@ -2,7 +2,6 @@ var ThemeStyles = require('../model/themeStyles'),
     configMapping = require('./configMapping'),
     ErrorReportingService = require('../service/errorReportingService'),
     browserDetect = require('../util/browserDetect'),
-    iOS7Theme = require('../model/iOS7Theme'),
     Theme = require('../model/theme'),
     ko = require('knockout');
 
