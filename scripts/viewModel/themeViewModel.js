@@ -3,7 +3,6 @@ var ThemeStyles = require('../model/themeStyles'),
     ErrorReportingService = require('../service/errorReportingService'),
     browserDetect = require('../util/browserDetect'),
     iOS7Theme = require('../model/iOS7Theme'),
-    sentriTheme = require('../model/sentriTheme'),
     Theme = require('../model/theme'),
     ko = require('knockout');
 
