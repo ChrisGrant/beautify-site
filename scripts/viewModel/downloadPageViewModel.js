@@ -2,6 +2,7 @@ var ko = require('knockout'),
 Please = require('../service/please.js'),
 PaletteColorViewModel = require('./paletteColorViewModel'),
 FlatThemeFactory = require('../service/themeFactories/flatThemeFactory'),
+iOS8ThemeFactory = require('../service/themeFactories/iOS8ThemeFactory'),
 ThemeViewModel = require('./themeViewModel');
 
 var DownloadPageViewModel = function() {
@@ -51,7 +52,9 @@ var DownloadPageViewModel = function() {
 
   };
   this.clickediOS8Style = function() {
-
+    self.activeFactory = new iOS8ThemeFactory();
+    self.resetToActiveStyleDefaultColorPalette();
+    self.reloadTheme();
   };
   this.clickediOS6Style = function() {
 

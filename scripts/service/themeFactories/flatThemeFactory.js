@@ -1,37 +1,34 @@
 var ThemeStyles = require('../../model/themeStyles'),
-	Text = require('../../model/common/text'),
-	PaletteColorViewModel = require('../../viewModel/paletteColorViewModel'),
-	Color = require('../../model/common/color');
+	PaletteColorViewModel = require('../../viewModel/paletteColorViewModel');
 
 function FlatThemeFactory() {
-		var self = this;
+	var self = this;
 
-		this.themeFromColors = function(colors) {
-			var style = new ThemeStyles();
+	this.themeFromColors = function(colors) {
+		var style = new ThemeStyles();
 
-			style.navigationBarStyle.backgroundColor.color(colors[0].colorHex());
+		style.navigationBarStyle.backgroundColor.color(colors[0].colorHex());
 
-			style.buttonStyle.backgroundColor.color(colors[1].colorHex());
+		style.buttonStyle.backgroundColor.color(colors[1].colorHex());
 
-			style.labelStyle.title.font.size(16);
+		style.labelStyle.title.font.size(16);
 
-			style.textFieldStyle.border.width(1);
-			style.textFieldStyle.border.color(colors[1].colorHex());
-			style.textFieldStyle.border.cornerRadius(0);
-			style.textFieldStyle.border._enabled(true);
+		style.textFieldStyle.border.width(1);
+		style.textFieldStyle.border.color(colors[1].colorHex());
+		style.textFieldStyle.border.cornerRadius(0);
+		style.textFieldStyle.border._enabled(true);
 
-			style.textFieldStyle.title.color("#000000");
-			style.textFieldStyle.title.font.style("Light"); // TODO doesn't work for some reason.
-			style.textFieldStyle.title.font.size(14);
+		style.textFieldStyle.title.color("#000000");
+		style.textFieldStyle.title.font.size(14);
 
-			return style;
-		};
+		return style;
+	};
 
-		this._defaultColors = new Array(new PaletteColorViewModel("#000000"), new PaletteColorViewModel("#ffffff"));
+	this._defaultColors = new Array(new PaletteColorViewModel("#000000"), new PaletteColorViewModel("#ffffff"));
 
-		this.defaultColors = function () {
-			return self._defaultColors;
-		};
+	this.defaultColors = function () {
+		return self._defaultColors;
+	};
 }
 
 module.exports = FlatThemeFactory;
