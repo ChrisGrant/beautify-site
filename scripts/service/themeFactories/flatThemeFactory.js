@@ -1,6 +1,7 @@
-var ThemeStyles = require('../model/themeStyles'),
-	Text = require('../model/common/text'),
-	Color = require('../model/common/color');
+var ThemeStyles = require('../../model/themeStyles'),
+	Text = require('../../model/common/text'),
+	PaletteColorViewModel = require('../../viewModel/paletteColorViewModel'),
+	Color = require('../../model/common/color');
 
 function FlatThemeFactory() {
 		var self = this;
@@ -11,7 +12,7 @@ function FlatThemeFactory() {
 			style.navigationBarStyle.backgroundColor.color(colors[0].colorHex());
 
 			style.buttonStyle.backgroundColor.color(colors[1].colorHex());
-			
+
 			style.labelStyle.title.font.size(16);
 
 			style.textFieldStyle.border.width(1);
@@ -24,6 +25,12 @@ function FlatThemeFactory() {
 			style.textFieldStyle.title.font.size(14);
 
 			return style;
+		};
+
+		this._defaultColors = new Array(new PaletteColorViewModel("#000000"), new PaletteColorViewModel("#ffffff"));
+
+		this.defaultColors = function () {
+			return self._defaultColors;
 		};
 }
 

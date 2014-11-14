@@ -1,7 +1,7 @@
 var ko = require('knockout'),
 Please = require('../service/please.js'),
 PaletteColorViewModel = require('./paletteColorViewModel'),
-FlatThemeFactory = require('../service/flatThemeFactory'),
+FlatThemeFactory = require('../service/themeFactories/flatThemeFactory'),
 ThemeViewModel = require('./themeViewModel');
 
 var DownloadPageViewModel = function() {
@@ -31,12 +31,17 @@ var DownloadPageViewModel = function() {
 
   this.themeViewModel = ko.observable(new ThemeViewModel());
 
+  this.resetToActiveStyleDefaultColorPalette = function() {
+    self.paletteColors(self.activeFactory.defaultColors());
+  }
+
   this.paletteColorChanged = function() {
     self.reloadTheme();
   };
 
   this.clickedFlatStyle = function() {
     self.activeFactory = new FlatThemeFactory();
+    self.resetToActiveStyleDefaultColorPalette();
     self.reloadTheme();
   };
   this.clickedMaterialStyle = function() {
