@@ -4,6 +4,7 @@ var ThemeStyles = require('../model/themeStyles'),
     browserDetect = require('../util/browserDetect'),
     iOS7Theme = require('../model/iOS7Theme'),
     sentriTheme = require('../model/sentriTheme'),
+    Theme = require('../model/theme'),
     ko = require('knockout');
 
 function ThemeViewModel() {
@@ -11,20 +12,19 @@ function ThemeViewModel() {
     var self = this;
     var data = null;
 
-    // Initially just with default values.
-    var themeStyles = new ThemeStyles();
-    this.model = ko.observable(themeStyles);
-
-    // Set data using json object, and apply it to the model.
-    this.setData = function(jsonData) {
-        data = jsonData;
-        console.log("Parsing JSON data for the theme with ID", jsonData.id);
-        configMapping.mapJStoThemeStyles(data.theme, self.model);
-    };
+    this.model = ko.observable(new ThemeStyles());
 
     this.setTheme = function(theme) {
       self.model(theme);
     };
+
+    this.getData = function() {
+      return configMapping.toJS(new Theme(self.model()));
+    }
+
+    this.reset = function() {
+      self.model(new ThemeStyles());
+    }
 }
 
 module.exports = ThemeViewModel;

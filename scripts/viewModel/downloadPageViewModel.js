@@ -31,8 +31,6 @@ var DownloadPageViewModel = function() {
 
   this.themeViewModel = ko.observable(new ThemeViewModel());
 
-  this.reloadTheme();
-
   this.paletteColorChanged = function() {
     self.reloadTheme();
   };
@@ -57,26 +55,24 @@ var DownloadPageViewModel = function() {
 
   };
 
-  this.clickedYellowColorPalette = function() {
-
-  };
-  this.clickedRedColorPalette = function() {
-
-  };
-  this.clickedGreenColorPalette = function() {
-
-  };
   this.clickedSurpriseMe = function() {
     self.regenerateColors();
     self.reloadTheme();
   };
 
   this.clickedDownload = function() {
-
+    var content = JSON.stringify(self.themeViewModel().getData());
+    var downloadLink = document.createElement('a');
+    downloadLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+    downloadLink.setAttribute('download', 'theme.json');
+    downloadLink.click();
   };
+
+  // Resets the theme to the default state.
   this.clickedReset = function() {
-
+    this.themeViewModel().reset();
   };
+
 };
 
 module.exports = DownloadPageViewModel;

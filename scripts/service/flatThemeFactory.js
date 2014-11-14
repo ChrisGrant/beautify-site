@@ -11,15 +11,8 @@ function FlatThemeFactory() {
 			style.navigationBarStyle.backgroundColor.color(colors[0].colorHex());
 
 			style.buttonStyle.backgroundColor.color(colors[1].colorHex());
-
-
-
-			var labelText = new Text();
-			labelText.color("#000000");
-			labelText.font.style("Light"); // TODO doesn't work for some reason.
-			labelText.font.size(16);
-
-			style.labelStyle.title = new Text(labelText);
+			
+			style.labelStyle.title.font.size(16);
 
 			style.textFieldStyle.border.width(1);
 			style.textFieldStyle.border.color(colors[1].colorHex());
