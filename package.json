@@ -8,7 +8,8 @@
     "browserify": "2.36.1",
     "jquery-browserify": "1.8.1",
     "knockout": "2.3.0",
-    "knockout.mapping": "git://github.com/chrisprice/knockout.mapping.git#npm-2.4.1"
+    "knockout.mapping": "git://github.com/chrisprice/knockout.mapping.git#npm-2.4.1",
+    "tinycolor2" :"1.0.0"
   },
   "devDependencies": {
     "grunt": "0.4.5",

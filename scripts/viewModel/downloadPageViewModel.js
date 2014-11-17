@@ -1,8 +1,9 @@
 var ko = require('knockout'),
-Please = require('../service/please.js'),
 PaletteColorViewModel = require('./paletteColorViewModel'),
 FlatThemeFactory = require('../service/themeFactories/flatThemeFactory'),
 iOS8ThemeFactory = require('../service/themeFactories/iOS8ThemeFactory'),
+iOS6ThemeFactory = require('../service/themeFactories/iOS6ThemeFactory'),
+MetroThemeFactory = require('../service/themeFactories/metroThemeFactory'),
 ThemeViewModel = require('./themeViewModel');
 
 var DownloadPageViewModel = function() {
@@ -57,14 +58,18 @@ var DownloadPageViewModel = function() {
     self.reloadTheme();
   };
   this.clickediOS6Style = function() {
-
+    self.activeFactory = new iOS6ThemeFactory();
+    self.resetToActiveStyleDefaultColorPalette();
+    self.reloadTheme();
   };
-  this.clickedDroidStyle = function() {
-
+  this.clickedMetroStyle = function() {
+    self.activeFactory = new MetroThemeFactory();
+    self.resetToActiveStyleDefaultColorPalette();
+    self.reloadTheme();
   };
 
   this.clickedSurpriseMe = function() {
-    self.regenerateColors();
+    self.paletteColors(self.activeFactory.surpriseColors());
     self.reloadTheme();
   };
 
