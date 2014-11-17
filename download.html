@@ -7,65 +7,67 @@
     <section class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
       <h3 class="title">choose a style</h1>
 
-        <!-- TODO style selection-->
         <div class="style-selection">
-          <div class="row">
-            <div class="col-sm-4">
+          <div class="row" style="margin-bottom: 20px;">
+            <div class="col-sm-4" data-bind="click: clickedFlatStyle">
               <div class="style-preview-container"></div>
               flat
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" data-bind="click: clickedMaterialStyle">
               <div class="style-preview-container"></div>
               material
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" data-bind="click: clickedGlossStyle">
               <div class="style-preview-container"></div>
               gloss
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-4" data-bind="click: clickediOS8Style">
               <div class="style-preview-container"></div>
               iOS8
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" data-bind="click: clickediOS6Style">
               <div class="style-preview-container"></div>
               iOS6
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" data-bind="click: clickedMetroStyle">
               <div class="style-preview-container"></div>
-              droid
+              metro
             </div>
           </div>
         </div>
 
         <h3>choose a colour palette</h3>
-        <!-- TODO colour palette selection -->
+
         <div class="palette row">
+
           <div class="col-sm-8">
-            <div class="row">
-              <div class="col-sm-2">
-                Yellow
-              </div>
-              <div class="col-sm-2">
-                Red
-              </div>
-              <div class="col-sm-2">
-                Green
-              </div>
+            <!-- ko foreach: paletteColors -->
+            <div class="colorPaletteColorContainer" data-bind="style: { background: colorHex }">
+              <input class="colorPaletteTextField" data-bind="value: colorHex" />
             </div>
+            <!-- /ko -->
           </div>
+
           <div class="col-sm-4">
-            <button type="button" class="btn btn-block btn-default">Surprise Me</button>
+            <button type="button" class="btn btn-lg btn-block btn-default supriseMeButton" data-bind="click: clickedSurpriseMe">
+              Suprise Me!
+            </button>
           </div>
+
         </div>
 
         <div class="buttons row">
           <div class="col-sm-6">
-            <button type="button" class="btn btn-lg btn-block btn-primary">Download</button>
+            <button type="button" class="btn btn-lg btn-block btn-primary" data-bind="click: clickedDownload">
+              Download
+            </button>
           </div>
           <div class="col-sm-6">
-            <button type="button" class="btn btn-lg btn-block btn-default">Reset</button>
+            <button type="button" class="btn btn-lg btn-block btn-default" data-bind="click: clickedReset">
+              Reset
+            </button>
           </div>
         </div>
 
