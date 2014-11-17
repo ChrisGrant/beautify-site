@@ -16,7 +16,7 @@ function MetroThemeFactory() {
 		return style;
 	};
 
-	this._defaultColors = new Array(new PaletteColorViewModel("#EEEEEE"), new PaletteColorViewModel("#007AFF"), new PaletteColorViewModel("#C1C1C1"));
+	this._defaultColors = new Array(new PaletteColorViewModel("#000000"), new PaletteColorViewModel("#FFFFFF"));
 
 	this.defaultColors = function () {
 		return self._defaultColors;
