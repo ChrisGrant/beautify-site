@@ -30,20 +30,21 @@ function FlatThemeFactory() {
 		return style;
 	};
 
-	this._defaultColors = new Array(new PaletteColorViewModel("#000000"), new PaletteColorViewModel("#ffffff"));
-
-	this.defaultColors = function () {
-		return self._defaultColors;
+	this.defaultColors = function (downloadPageViewModel) {
+		return new Array(
+			new PaletteColorViewModel("#000000", downloadPageViewModel),
+			new PaletteColorViewModel("#ffffff", downloadPageViewModel));
 	};
 
-	this.surpriseColors = function() {
+	this.surpriseColors = function(downloadPageViewModel) {
 		var scheme = Please.make_scheme(Please.make_color({format: 'hsv'}));
 		var colors = new Array();
 		for (var i = 0; i < 2; i++) {
-			colors.push(new PaletteColorViewModel(scheme[i], self));
+			colors.push(new PaletteColorViewModel(scheme[i], downloadPageViewModel));
 		}
 		return colors;
 	};
+
 }
 
 module.exports = FlatThemeFactory;

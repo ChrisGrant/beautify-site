@@ -34,7 +34,7 @@ var DownloadPageViewModel = function() {
   this.themeViewModel = ko.observable(new ThemeViewModel());
 
   this.resetToActiveStyleDefaultColorPalette = function() {
-    self.paletteColors(self.activeFactory.defaultColors());
+    self.paletteColors(self.activeFactory.defaultColors(self));
   }
 
   this.paletteColorChanged = function() {
@@ -69,7 +69,7 @@ var DownloadPageViewModel = function() {
   };
 
   this.clickedSurpriseMe = function() {
-    self.paletteColors(self.activeFactory.surpriseColors());
+    self.paletteColors(self.activeFactory.surpriseColors(self));
     self.reloadTheme();
   };
 
