@@ -1,8 +1,9 @@
 var ko = require('knockout');
 
-function PaletteColorViewModel(color, parent) {
+// The downloadPageViewModel must be passed to the PaletteColorViewModel so that it can inform it when it changes.
+function PaletteColorViewModel(color, downloadPageViewModel) {
 	var self = this;
-	this.parent = parent;
+	this.downloadPageViewModel = downloadPageViewModel;
 
 	this._colorHex = ko.observable(color);
 
@@ -12,7 +13,7 @@ function PaletteColorViewModel(color, parent) {
 		},
 		write: function (value) {
 			self._colorHex(value);
-			self.parent.paletteColorChanged();
+			self.downloadPageViewModel.paletteColorChanged();
 		},
 		owner: this
 	});

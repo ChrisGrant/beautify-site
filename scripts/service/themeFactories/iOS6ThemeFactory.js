@@ -3,7 +3,7 @@ var ThemeStyles = require('../../model/themeStyles'),
 	TinyColor = require('tinycolor2'),
 	Please = require('../please.js'),
 	iOS6Theme = require('../../model/iOS6Theme'),
-  	configMapping = require('../../viewModel/configMapping');
+  configMapping = require('../../viewModel/configMapping');
 
 function iOS6ThemeFactory() {
 	var self = this;
@@ -16,17 +16,18 @@ function iOS6ThemeFactory() {
 		return style;
 	};
 
-	this._defaultColors = new Array(new PaletteColorViewModel("#EEEEEE"), new PaletteColorViewModel("#007AFF"), new PaletteColorViewModel("#C1C1C1"));
-
-	this.defaultColors = function () {
-		return self._defaultColors;
+	this.defaultColors = function (downloadPageViewModel) {
+		return new Array(
+			new PaletteColorViewModel("#EEEEEE", downloadPageViewModel), 
+			new PaletteColorViewModel("#007AFF", downloadPageViewModel),
+			new PaletteColorViewModel("#C1C1C1", downloadPageViewModel));
 	};
 
-	this.surpriseColors = function() {
+	this.surpriseColors = function(downloadPageViewModel) {
 		var scheme = Please.make_scheme(Please.make_color({format: 'hsv'}));
 		var colors = new Array();
 		for (var i = 0; i < 3; i++) {
-			colors.push(new PaletteColorViewModel(scheme[i], self));
+			colors.push(new PaletteColorViewModel(scheme[i], downloadPageViewModel));
 		}
 		return colors;
 	};
