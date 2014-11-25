@@ -3,7 +3,7 @@ var ThemeStyles = require('../../model/themeStyles'),
 	TinyColor = require('tinycolor2'),
 	Please = require('../please.js'),
 	iOS6Theme = require('../../model/iOS6Theme'),
-  configMapping = require('../../viewModel/configMapping');
+  	configMapping = require('../../viewModel/configMapping');
 
 function iOS6ThemeFactory() {
 	var self = this;

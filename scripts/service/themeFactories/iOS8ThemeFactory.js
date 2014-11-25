@@ -63,7 +63,10 @@ function iOS8ThemeFactory() {
 
 		style.navigationBarStyle.title.font.size(18);
 		style.navigationBarStyle.title.font.family("HelveticaNeue-Light");
-		style.navigationBarStyle.backgroundColor.color(colors[0].colorHex());
+		// Lighten the text color for the nav bar color.
+		var navBarColor = new TinyColor(colors[1].colorHex());
+		navBarColor.lighten(90);
+		style.navigationBarStyle.backgroundColor.color(navBarColor.toHexString()); 
 
 		style.tableViewCellStyle.title.color("#000000");
 		style.tableViewCellStyle.title.font.family("HelveticaNeue-Light");
