@@ -6,7 +6,7 @@ module.exports = {
             "title": {
                 "color": "#007AFF",
                 "font": {
-                    "name": "HelveticaNeue-Light",
+                    "name": "HelveticaNeue-Medium",
                     "size": 0
                 }
             },
@@ -16,9 +16,9 @@ module.exports = {
                     "state": "highlighted",
                     "propertyName": "title",
                     "value": {
-                        "color": "#C7E3FF",
+                        "color": "#007AFF32",
                         "font": {
-                            "name": "HelveticaNeue-Light",
+                            "name": "HelveticaNeue-Medium",
                             "size": 0
                         }
                     }
@@ -29,14 +29,14 @@ module.exports = {
             "title": {
                 "color": "#000000",
                 "font": {
-                    "name": "HelveticaNeue-Light",
+                    "name": "HelveticaNeue",
                     "size": 0
                 }
             },
             "backgroundColor": "#FFFFFF",
             "border": {
                 "width": 1,
-                "color": "#C1C1C1",
+                "color": "#cccccc",
                 "cornerRadius": 5
             },
             "stateSetters": []
@@ -49,7 +49,7 @@ module.exports = {
             "title": {
                 "color": "#000000",
                 "font": {
-                    "name": "HelveticaNeue-Light",
+                    "name": "HelveticaNeue",
                     "size": 0
                 }
             },
@@ -60,32 +60,25 @@ module.exports = {
                 "textStyle": {
                     "color": "#FFFFFF",
                     "font": {
-                        "name": "Helvetica",
+                        "name": "HelveticaNeue",
                         "size": 0
                     }
                 },
                 "text": "",
-                "backgroundColor": "#4BD863",
-                "borderColor": "#4BD863",
-                "textShadow": {
-                    "color": "#006CAF",
-                    "offset": {
-                        "x": 0,
-                        "y": -1
-                    }
-                }
+                "backgroundColor": "#4BD562",
+                "borderColor": "#4BD562"
             },
             "offState": {
                 "textStyle": {
-                    "color": "#FFFFFF",
+                    "color": "#000000",
                     "font": {
-                        "name": "Helvetica",
+                        "name": "HelveticaNeue",
                         "size": 0
                     }
                 },
                 "text": "",
-                "backgroundColor": "#E0E0E0",
-                "borderColor": "#E0E0E0"
+                "backgroundColor": "#ffffff",
+                "borderColor": "#e5e5e5"
             },
             "thumbInset": 1.5,
             "thumbBorder": {
@@ -96,7 +89,7 @@ module.exports = {
             "highlightColor": "#00000000",
             "thumbBackgroundColor": "#FFFFFF",
             "thumbOuterShadow": {
-                "color": "#999999",
+                "color": "#00000019",
                 "radius": 5,
                 "offset": {
                     "x": 0,
@@ -104,8 +97,8 @@ module.exports = {
                 }
             },
             "border": {
-                "width": 2,
-                "color": "#E0E0E0",
+                "width": 0,
+                "color": "#ffffff",
                 "cornerRadius": 25
             },
             "stateSetters": []
@@ -115,17 +108,34 @@ module.exports = {
                 "color": "#000000",
                 "font": {
                     "name": "HelveticaNeue-Medium",
-                    "size": 18
+                    "size": 0
                 }
             },
-            "backgroundColor": "#EEEEEE",
+            "backgroundColor": "#f2f2f2",
+            "backgroundGradient": {
+                "radial": false,
+                "stops": [
+                  {
+                      "position": 0,
+                      "color": "#f2f2f2"
+                  },
+                  {
+                      "position": 0.98,
+                      "color": "#f2f2f2"
+                  },
+                  {
+                      "position": 1,
+                      "color": "#a6a6a6"
+                  }
+                ]
+            },
             "stateSetters": []
         },
         "tableViewCellStyle": {
             "title": {
                 "color": "#000000",
                 "font": {
-                    "name": "HelveticaNeue-Light",
+                    "name": "HelveticaNeue",
                     "size": 0
                 }
             },
@@ -135,15 +145,15 @@ module.exports = {
                 "stops": [
                     {
                         "position": 0,
-                        "color": "#AAAAAA00"
+                        "color": "#ffffff00"
                     },
                     {
-                        "position": 0.9498221071755403,
-                        "color": "#FFFFFF00"
+                        "position": 0.98,
+                        "color": "#ffffff00"
                     },
                     {
                         "position": 1,
-                        "color": "#DDDDDD"
+                        "color": "#cccccc"
                     }
                 ]
             },
@@ -157,7 +167,7 @@ module.exports = {
             "title": {
                 "color": "#007AFF",
                 "font": {
-                    "name": "HelveticaNeue-Light",
+                    "name": "HelveticaNeue",
                     "size": 0
                 }
             },
@@ -167,9 +177,9 @@ module.exports = {
                     "state": "highlighted",
                     "propertyName": "title",
                     "value": {
-                        "color": "#C7E3FF",
+                        "color": "#007AFF32",
                         "font": {
-                            "name": "HelveticaNeue-Light",
+                            "name": "HelveticaNeue",
                             "size": 0
                         }
                     }
@@ -194,9 +204,9 @@ module.exports = {
                     "state": "highlighted",
                     "propertyName": "title",
                     "value": {
-                        "color": "#C7E3FF",
+                        "color": "#007AFF32",
                         "font": {
-                            "name": "HelveticaNeue-Light",
+                            "name": "HelveticaNeue",
                             "size": 0
                         }
                     }
@@ -207,19 +217,19 @@ module.exports = {
             "barHeightFraction": 0.1,
             "barBorder": {
                 "width": 0,
-                "color": "#666666",
+                "color": "#000000",
                 "cornerRadius": 3
             },
             "thumbBorder": {
-                "width": 0,
-                "color": "#666666",
+                "width": 1,
+                "color": "#000000",
                 "cornerRadius": 25
             },
             "thumbBackgroundColor": "#FFFFFF",
             "minimumTrackColor": "#007AFF",
-            "maximumTrackColor": "#B2B2B2",
+            "maximumTrackColor": "#b3b3b3",
             "thumbOuterShadow": {
-                "color": "#AAAAAA7F",
+                "color": "#00000019",
                 "radius": 4,
                 "offset": {
                     "x": 0,

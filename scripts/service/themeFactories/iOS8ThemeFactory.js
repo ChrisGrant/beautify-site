@@ -13,35 +13,76 @@ function iOS8ThemeFactory() {
 
 		configMapping.mapJStoThemeStyles(iOS8Theme.theme, style);
 
-		var backgroundColor = colors[0].colorHex();
-		var textColor = colors[1].colorHex();
-		var highlightColor = colors[2].colorHex();
-		var highlightColor2 = colors[3].colorHex();
+		var backgroundColor = colors[0];
+		var foregroundColor = colors[1];
+		var highlightColor = colors[2];
+		var highlightColor2 = colors[3];
 
-		// // Lighten text color for grey inline for each field (as appropriate).
+		// button
+		style.buttonStyle.title.color(highlightColor.colorHex());
+		var buttonHighlightedColor = new TinyColor(highlightColor.colorHex());
+		buttonHighlightedColor.setAlpha(.5);
+		style.buttonStyle.stateSetters()[0].value.color(buttonHighlightedColor.toHex8String())
 
-		style.buttonStyle.title.color(colors[1].colorHex());
+		// text field
+		style.textFieldStyle.title.color(foregroundColor.colorHex());
+		var textFieldBorderColor = new TinyColor(foregroundColor.colorHex());
+		textFieldBorderColor.brighten(80);  // GO - should this be 40?
+		style.textFieldStyle.border.color(textFieldBorderColor.toHexString());
 
-		style.textFieldStyle.border.color(colors[2].colorHex());
+		// view controller
+		style.viewControllerStyle.backgroundColor.color(backgroundColor.colorHex());
 
-		style.viewControllerStyle.backgroundColor.color(colors[0].colorHex());
+		// label
+		style.labelStyle.title.color(foregroundColor.colorHex());
 
-		style.labelStyle.title.color(colors[1].colorHex());
+		// switch
+		style.switchStyle.onState.textStyle.color(backgroundColor.colorHex());
+		style.switchStyle.onState.backgroundColor(highlightColor2.colorHex());
+		style.switchStyle.onState.borderColor(highlightColor2.colorHex());
+		style.switchStyle.offState.textStyle.color(foregroundColor.colorHex());
+		style.switchStyle.offState.backgroundColor(backgroundColor.colorHex());
+		var switchOffBorderColor = new TinyColor(backgroundColor.colorHex());
+		switchOffBorderColor.darken(10); // GO - should this be 5?
+		style.switchStyle.offState.backgroundColor(switchOffBorderColor.toHexString());
+		style.switchStyle.thumbBackgroundColor.color(backgroundColor.colorHex());
 
-		// Lighten the text color for the nav bar color.
-		var navBarColor = new TinyColor(colors[1].colorHex());
-		navBarColor.lighten(90);
-		style.navigationBarStyle.backgroundColor.color(navBarColor.toHexString()); 
+		// navigation bar
+		var navBarColor = new TinyColor(backgroundColor.colorHex());
+		navBarColor.darken(10); // GO - should this be 2.5?
+		var navBarLineColor = new TinyColor(backgroundColor.colorHex());
+		navBarLineColor.darken(40); // GO - should this be 17.5?
+		style.navigationBarStyle.backgroundColor.color(navBarColor.toHexString());
+		style.navigationBarStyle.backgroundGradient.stops()[0].color(navBarColor.toHexString());
+		style.navigationBarStyle.backgroundGradient.stops()[1].color(navBarColor.toHexString());
+		style.navigationBarStyle.backgroundGradient.stops()[2].color(navBarLineColor.toHexString());
 
-		style.tableViewCellStyle.title.color(colors[1].colorHex());
+		// table view cell
+		style.tableViewCellStyle.title.color(foregroundColor.colorHex());
+		style.tableViewCellStyle.backgroundColor.color(backgroundColor.colorHex());
+		var tableViewCellLineColor = new TinyColor(foregroundColor.colorHex());
+		tableViewCellLineColor.brighten(40);  // GO - should this be 10?
+		style.tableViewCellStyle.backgroundGradient.stops()[2].color(tableViewCellLineColor.toHexString());
 
-		style.barButtonItemStyle.title.color(colors[1].colorHex());
+		// bar button item
+		style.barButtonItemStyle.title.color(highlightColor.colorHex());
+		style.barButtonItemStyle.stateSetters()[0].value.color(buttonHighlightedColor.toHex8String());
 
-		style.backButtonItemStyle.title.color(colors[1].colorHex());
+		// back button
+		style.backButtonItemStyle.title.color(highlightColor.colorHex());
+		style.backButtonItemStyle.stateSetters()[0].value.color(buttonHighlightedColor.toHex8String());
 
-		style.sliderStyle.thumbBackgroundColor.color(colors[0].colorHex());
-		style.sliderStyle.minimumTrackColor.color(colors[2].colorHex());
-		style.sliderStyle.maximumTrackColor.color("#B2B2B2");
+		// slider
+		style.sliderStyle.thumbBackgroundColor.color(backgroundColor.colorHex());
+		style.sliderStyle.minimumTrackColor.color(highlightColor.colorHex());
+		var sliderTrackColor = new TinyColor(foregroundColor.colorHex());
+		sliderTrackColor.brighten(70); // GO - should this be 35
+		style.sliderStyle.maximumTrackColor.color(sliderTrackColor.toHexString());
+		var sliderThumbBorderColor = new TinyColor(foregroundColor.colorHex());
+		sliderThumbBorderColor.setAlpha(0.25);
+		style.sliderStyle.thumbBorder.color(sliderThumbBorderColor.toHex8String());
+
+		// tab bar
 
 		return style;
 	};
@@ -51,7 +92,7 @@ function iOS8ThemeFactory() {
 			new PaletteColorViewModel("#FFFFFF", downloadPageViewModel),
 			new PaletteColorViewModel("#000000", downloadPageViewModel),
 			new PaletteColorViewModel("#007AFF", downloadPageViewModel),
-			new PaletteColorViewModel("#4BD863", downloadPageViewModel));
+			new PaletteColorViewModel("#4BD562", downloadPageViewModel));
 	};
 
 	this.surpriseColors = function(downloadPageViewModel) {
