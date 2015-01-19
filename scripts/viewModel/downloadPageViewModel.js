@@ -1,6 +1,8 @@
 var ko = require('knockout'),
 PaletteColorViewModel = require('./paletteColorViewModel'),
 FlatThemeFactory = require('../service/themeFactories/flatThemeFactory'),
+GlossThemeFactory = require('../service/themeFactories/glossThemeFactory'),
+MaterialThemeFactory = require('../service/themeFactories/materialThemeFactory'),
 iOS8ThemeFactory = require('../service/themeFactories/iOS8ThemeFactory'),
 iOS6ThemeFactory = require('../service/themeFactories/iOS6ThemeFactory'),
 MetroThemeFactory = require('../service/themeFactories/metroThemeFactory'),
@@ -8,8 +10,6 @@ ThemeViewModel = require('./themeViewModel');
 
 var DownloadPageViewModel = function() {
   var self = this;
-
-  this.activeFactory = new FlatThemeFactory();
 
   this.regenerateColors = function() {
     self.paletteColors.removeAll();
@@ -24,14 +24,6 @@ var DownloadPageViewModel = function() {
   this.reloadTheme = function() {
     self.themeViewModel().setTheme(self.activeFactory.themeFromColors(self.paletteColors()));
   };
-
-  this.themeColor = ko.observable(Please.make_color());
-
-  this.paletteColors = ko.observableArray();
-
-  this.regenerateColors();
-
-  this.themeViewModel = ko.observable(new ThemeViewModel());
 
   this.resetToActiveStyleDefaultColorPalette = function() {
     self.paletteColors(self.activeFactory.defaultColors(self));
@@ -49,10 +41,15 @@ var DownloadPageViewModel = function() {
     ga('send', 'event', 'button', 'click', 'download-page-style-flat-button');
   };
   this.clickedMaterialStyle = function() {
-
+    self.activeFactory = new MaterialThemeFactory();
+    self.resetToActiveStyleDefaultColorPalette();
+    self.reloadTheme();
     ga('send', 'event', 'button', 'click', 'download-page-style-material-button');
   };
   this.clickedGlossStyle = function() {
+    self.activeFactory = new GlossThemeFactory();
+    self.resetToActiveStyleDefaultColorPalette();
+    self.reloadTheme();
 
     ga('send', 'event', 'button', 'click', 'download-page-style-gloss-button');
   };
@@ -102,6 +99,35 @@ var DownloadPageViewModel = function() {
     ga('send', 'event', 'button', 'click', 'download-page-reset-button');
   };
 
+
+  // Display a random theme with it's default colors initially.
+  var random = Math.floor(Math.random() * 6) + 1;
+  if (random == 1) {
+    this.activeFactory = new FlatThemeFactory();
+  }
+  else if (random == 2) {
+    this.activeFactory = new MaterialThemeFactory();
+  }
+  else if (random == 3) {
+    this.activeFactory = new GlossThemeFactory();
+  }
+  else if (random == 4) {
+    this.activeFactory = new iOS8ThemeFactory();
+  }
+  else if (random == 5) {
+    this.activeFactory = new iOS6ThemeFactory();
+  }
+  else if (random == 6) {
+    this.activeFactory = new MetroThemeFactory();
+  }
+
+  this.paletteColors = ko.observableArray();
+
+  this.resetToActiveStyleDefaultColorPalette();
+
+  this.themeViewModel = ko.observable(new ThemeViewModel());
+
+  this.reloadTheme();
 };
 
 module.exports = DownloadPageViewModel;
