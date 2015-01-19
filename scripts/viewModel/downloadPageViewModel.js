@@ -45,32 +45,44 @@ var DownloadPageViewModel = function() {
     self.activeFactory = new FlatThemeFactory();
     self.resetToActiveStyleDefaultColorPalette();
     self.reloadTheme();
+
+    ga('send', 'event', 'button', 'click', 'download-page-style-flat-button');
   };
   this.clickedMaterialStyle = function() {
 
+    ga('send', 'event', 'button', 'click', 'download-page-style-material-button');
   };
   this.clickedGlossStyle = function() {
 
+    ga('send', 'event', 'button', 'click', 'download-page-style-gloss-button');
   };
   this.clickediOS8Style = function() {
     self.activeFactory = new iOS8ThemeFactory();
     self.resetToActiveStyleDefaultColorPalette();
     self.reloadTheme();
+
+    ga('send', 'event', 'button', 'click', 'download-page-style-iOS8-button');
   };
   this.clickediOS6Style = function() {
     self.activeFactory = new iOS6ThemeFactory();
     self.resetToActiveStyleDefaultColorPalette();
     self.reloadTheme();
+
+    ga('send', 'event', 'button', 'click', 'download-page-style-iOS6-button');
   };
   this.clickedMetroStyle = function() {
     self.activeFactory = new MetroThemeFactory();
     self.resetToActiveStyleDefaultColorPalette();
     self.reloadTheme();
+
+    ga('send', 'event', 'button', 'click', 'download-page-style-metro-button');
   };
 
   this.clickedSurpriseMe = function() {
     self.paletteColors(self.activeFactory.surpriseColors(self));
     self.reloadTheme();
+
+    ga('send', 'event', 'button', 'click', 'download-page-surprise-me-button');
   };
 
   this.clickedDownload = function() {
@@ -79,11 +91,15 @@ var DownloadPageViewModel = function() {
     downloadLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
     downloadLink.setAttribute('download', 'theme.json');
     downloadLink.click();
+
+    ga('send', 'event', 'button', 'click', 'download-page-download-button');
   };
 
   // Resets the theme to the default state.
   this.clickedReset = function() {
     this.themeViewModel().reset();
+
+    ga('send', 'event', 'button', 'click', 'download-page-reset-button');
   };
 
 };
